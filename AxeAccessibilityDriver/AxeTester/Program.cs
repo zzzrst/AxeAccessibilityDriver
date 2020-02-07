@@ -1,15 +1,17 @@
-﻿using System;
-using System.IO;
-using System.IO.Compression;
-using System.Reflection;
-
-namespace AxeTester
+﻿namespace AxeTester
 {
+    using System;
+    using System.IO;
+    using System.IO.Compression;
+    using System.Reflection;
+    using AxeAccessibilityDriver;
+
     class Program
     {
         static string LogSaveFileLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\log";
 
         static SeleniumDriver seleniumDriver;
+
         static void Main(string[] args)
         {
             SeleniumDriver.Browser browser = SeleniumDriver.Browser.Chrome;
@@ -29,7 +31,9 @@ namespace AxeTester
             seleniumDriver.NavigateToURL("https://www.google.ca/");
             seleniumDriver.RunAODA("Google");
 
-            SaveAODA();
+            //SaveAODA();
+           
+            
         }
 
         /// <summary>
