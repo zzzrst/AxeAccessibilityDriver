@@ -28,12 +28,20 @@
                 LoadingSpinner = loadingSpinner,
             };
 
-            seleniumDriver.NavigateToURL("https://www.google.ca/");
-            seleniumDriver.RunAODA("Google");
+            //seleniumDriver.NavigateToURL("https://www.google.ca/");
+            //seleniumDriver.RunAODA("Google");
 
             //SaveAODA();
-           
-            
+
+            TestReportExcel report = new TestReportExcel
+            {
+                ProjectName = "name",
+                ProjectUrl = "google",
+                Date = DateTime.Today.ToString(),
+                fileLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\report.xlsx",
+            };
+
+            report.WriteToExcel();
         }
 
         /// <summary>
