@@ -20,6 +20,7 @@ namespace AxeAccessibilityDriver
     {
         private const string TALLIEDRESULT = "TalliedResult.csv";
         private const string RULEPAGESUMMARY = "RulePageSummary.csv";
+        private const string AODAEXCELREPORT = "AODAReport.csv";
 
         /// <summary>
         /// Result Type -> { Rule ID -> {Page URL -> HTML, Target, Data, Related Nodes} }.
@@ -102,6 +103,8 @@ namespace AxeAccessibilityDriver
         /// <param name="folderLocation">Location to save all the results.</param>
         public void LogResults(string folderLocation)
         {
+            TestReportExcel excelReport = new TestReportExcel();
+
             List<string> rulePageSummary = new List<string>()
             {
                 "Page URl,Provided Page Title,Browser Page Title,Result Type,Description,Rule Tag,Impact,Help,Help URL,Occurance on Page",
@@ -190,6 +193,9 @@ namespace AxeAccessibilityDriver
                     sw.WriteLine(pageResult);
                 }
             }
+
+            excelReport.fileLocation = folderLocation + AODAEXCELREPORT;
+            excelReport.WriteToExcel();
         }
 
         /// <summary>

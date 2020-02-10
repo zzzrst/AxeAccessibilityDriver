@@ -1,23 +1,45 @@
-﻿using NPOI.SS.UserModel;
-using NPOI.XSSF.UserModel;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text;
+﻿// <copyright file="TestReportExcel.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace AxeAccessibilityDriver
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Reflection;
+    using System.Text;
+    using NPOI.SS.UserModel;
+    using NPOI.XSSF.UserModel;
+
+    /// <summary>
+    /// The excel test reporter object.
+    /// </summary>
     public class TestReportExcel
     {
         /// <summary>
-        /// The data to write to the excel sheet
+        /// The data to write to the excel sheet.
         /// </summary>
         public Dictionary<string, Dictionary<ColumnNames, string>> ExcelData;
 
+        /// <summary>
+        /// Name of the project.
+        /// </summary>
         public string ProjectName;
+
+        /// <summary>
+        /// The url of the project.
+        /// </summary>
         public string ProjectUrl;
+
+        /// <summary>
+        /// The date this was modified.
+        /// </summary>
         public string Date;
+
+        /// <summary>
+        /// The location to save the file to.
+        /// </summary>
         public string fileLocation;
 
         /// <summary>
@@ -72,7 +94,7 @@ namespace AxeAccessibilityDriver
             ISheet sheet = null;
 
             string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA_Template.xlsx";
-            string resultFilePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"//AODA_Result_{DateTime.Now:MM_dd_yyyy_hh_mm_ss_tt}.xlsx";
+            string resultFilePath = this.fileLocation;
 
             using (FileStream templateFS = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
@@ -96,7 +118,7 @@ namespace AxeAccessibilityDriver
 
             cell.SetCellValue("Pass");
 
-            //write to output.
+            // write to output.
             using (FileStream fileStream = new FileStream(resultFilePath, FileMode.Create, FileAccess.Write))
             {
                 workbook.Write(fileStream);
