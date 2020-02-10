@@ -6,13 +6,16 @@
     using System.Reflection;
     using AxeAccessibilityDriver;
 
-    class Program
+    /// <summary>
+    /// Main program
+    /// </summary>
+    internal class Program
     {
-        static string LogSaveFileLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\log";
+        private static readonly string LogSaveFileLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\log";
 
-        static SeleniumDriver seleniumDriver;
+        private static SeleniumDriver seleniumDriver;
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             SeleniumDriver.Browser browser = SeleniumDriver.Browser.Chrome;
             TimeSpan timeOutThreshold = TimeSpan.FromSeconds(3);
@@ -38,7 +41,6 @@
                 ProjectName = "name",
                 ProjectUrl = "google",
                 Date = DateTime.Today.ToString(),
-                fileLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\report.xlsx",
             };
 
             report.WriteToExcel();
@@ -47,7 +49,7 @@
         /// <summary>
         /// Runs AODA If needed.
         /// </summary>
-        public static void SaveAODA()
+        private static void SaveAODA()
         {
             Console.WriteLine("Saving AODA");
             string tempFolder = $"{LogSaveFileLocation}\\temp\\";
