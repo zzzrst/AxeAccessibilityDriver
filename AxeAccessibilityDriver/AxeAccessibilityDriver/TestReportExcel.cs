@@ -18,9 +18,24 @@ namespace AxeAccessibilityDriver
     public class TestReportExcel
     {
         /// <summary>
+        /// The value for pass in the excel document.
+        /// </summary>
+        public const string PASSVALUE = "Pass";
+
+        /// <summary>
+        /// The value for fail in the excel doucment.
+        /// </summary>
+        public const string FAILVALUE = "Fail";
+
+        /// <summary>
+        /// The not applicable value.
+        /// </summary>
+        public const string NOTAPPLICABLEVALUE = "Criteria not applicable";
+
+        /// <summary>
         /// The data to write to the excel sheet.
         /// </summary>
-        public Dictionary<string, Dictionary<ColumnNames, string>> ExcelData;
+        public Dictionary<string, List<string>> ExcelData;
 
         /// <summary>
         /// Name of the project.
@@ -40,7 +55,7 @@ namespace AxeAccessibilityDriver
         /// <summary>
         /// The location to save the file to.
         /// </summary>
-        public string fileLocation;
+        public string FileLocation;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TestReportExcel"/> class.
@@ -48,40 +63,7 @@ namespace AxeAccessibilityDriver
         /// </summary>
         public TestReportExcel()
         {
-            this.ExcelData = new Dictionary<string, Dictionary<ColumnNames, string>>();
-        }
-
-        /// <summary>
-        /// The names of the Columns.
-        /// </summary>
-        public enum ColumnNames
-        {
-            /// <summary>
-            /// Id of the AODA.
-            /// </summary>
-            Id,
-
-            /// <summary>
-            /// Usualy AA or A.
-            /// </summary>
-            Level,
-
-            /// <summary>
-            /// Pass, Fail or N/A.
-            /// </summary>
-            Criteria,
-
-            /// <summary>
-            /// Any comments provided.
-            /// </summary>
-            Comments,
-        }
-
-        private enum Criteria
-        {
-            Pass,
-            Fail,
-            NA,
+            this.ExcelData = new Dictionary<string, List<string>>();
         }
 
         /// <summary>
@@ -94,7 +76,7 @@ namespace AxeAccessibilityDriver
             ISheet sheet = null;
 
             string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA_Template.xlsx";
-            string resultFilePath = this.fileLocation;
+            string resultFilePath = this.FileLocation;
 
             using (FileStream templateFS = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {

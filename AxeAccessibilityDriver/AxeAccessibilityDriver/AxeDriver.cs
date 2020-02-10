@@ -147,6 +147,13 @@ namespace AxeAccessibilityDriver
                             new JProperty("Help URL", this.ruleInfo[ruleID.Key].HelpUrl),
                             new JProperty("Nodes", nodeInfoList));
 
+                        // add it into the excel sheet.
+                        List<string> row = new List<string>();
+                        row.Add(TestReportExcel.ColumnNames.Comments, $"{this.ruleInfo[ruleID.Key].Help}\n{this.ruleInfo[ruleID.Key].HelpUrl}");
+                        row.Add(TestReportExcel.ColumnNames.Criteria, "");
+                        row.Add(TestReportExcel.ColumnNames.Level, "");
+                        excelReport.ExcelData.Add("", row);
+
                         // record occurance on page
                         rulePageSummary.Add(
                             string.Format(
