@@ -93,12 +93,22 @@ namespace AxeAccessibilityDriver
             failStyle.FillPattern = FillPattern.SolidForeground;
 
             // get the sheet to modify.
-            sheet = workbook.GetSheet("WCAG 2.0 Compliance Checklist");
+            sheet = workbook.GetSheet(ResourceHelper.GetString("SheetCheckList"));
 
-            IRow row = sheet.GetRow(13 - 1);
-            ICell cell = row.GetCell(4 - 1);
+            foreach (string key in this.ExcelData.Keys)
+            {
+                int rowId = this.FindIdWithValue(key, sheet);
+                int colIndex = 2;
 
-            cell.SetCellValue("Pass");
+                foreach (string col in this.ExcelData[key])
+                {
+                    IRow row = sheet.GetRow(rowId);
+                    ICell cell = row.GetCell(colIndex);
+                    cell.SetCellValue(col);
+                    colIndex++;
+                }
+            }
+
 
             // write to output.
             using (FileStream fileStream = new FileStream(resultFilePath, FileMode.Create, FileAccess.Write))
@@ -107,5 +117,21 @@ namespace AxeAccessibilityDriver
                 workbook.Close();
             }
         }
+
+        private int FindIdWithValue(string key, ISheet sheet)
+        {
+            int id = -1;
+            for (int rowIndex = 12; rowIndex < 56; rowIndex++)
+            {
+                string cellValue = sheet.GetRow(rowIndex).GetCell(0).ToString();
+                if (key.Equals(cellValue))
+                {
+                    id = rowIndex;
+                }
+            }
+
+            return id;
+        }
+
     }
 }

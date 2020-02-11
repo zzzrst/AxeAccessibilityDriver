@@ -147,12 +147,7 @@ namespace AxeAccessibilityDriver
                             new JProperty("Help URL", this.ruleInfo[ruleID.Key].HelpUrl),
                             new JProperty("Nodes", nodeInfoList));
 
-                        // add it into the excel sheet.
-                        List<string> row = new List<string>();
-                        row.Add(TestReportExcel.ColumnNames.Comments, $"{this.ruleInfo[ruleID.Key].Help}\n{this.ruleInfo[ruleID.Key].HelpUrl}");
-                        row.Add(TestReportExcel.ColumnNames.Criteria, "");
-                        row.Add(TestReportExcel.ColumnNames.Level, "");
-                        excelReport.ExcelData.Add("", row);
+                        this.WriteToExcelData(excelReport, this.ruleInfo[ruleID.Key].RuleTag, resultType.Key, $"{this.ruleInfo[ruleID.Key].Help}\n{ this.ruleInfo[ruleID.Key].HelpUrl}");
 
                         // record occurance on page
                         rulePageSummary.Add(
@@ -201,8 +196,44 @@ namespace AxeAccessibilityDriver
                 }
             }
 
-            excelReport.fileLocation = folderLocation + AODAEXCELREPORT;
+            excelReport.FileLocation = folderLocation + AODAEXCELREPORT;
             excelReport.WriteToExcel();
+        }
+
+        private void WriteToExcelData(TestReportExcel excelReport, List<string> ruleTag, string resultString, string comment)
+        {
+
+            // add it into the excel sheet.
+            string rowName = null;
+            string levelValue = "A";
+
+            List<string> row = new List<string>();
+
+            // Add Level Column.
+            if (ruleTag.Contains("wcag2aa"))
+            {
+                levelValue = "AA";
+            }
+
+            row.Add(levelValue);
+
+            // Add Criteria.
+            row.Add(ResourceHelper.GetString(ResourceHelper.GetString(resultString)));
+
+            // Add Comments.
+            row.Add(comment);
+
+            rowName = ruleTag.Find(s => s.Contains("wcag") && s != "wcag2a" && s != "wcag2aa");
+
+            if (rowName != null)
+            {
+                rowName = rowName.Substring(4, rowName.Length);
+                rowName = rowName.Aggregate(string.Empty, (c, i) => c + i + '.');
+                rowName = rowName.Substring(0, rowName.Length - 1);
+                Console.WriteLine(rowName);
+
+                excelReport.ExcelData.Add(rowName, row);
+            }
         }
 
         /// <summary>
