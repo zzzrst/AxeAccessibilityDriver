@@ -33,31 +33,6 @@ namespace AxeAccessibilityDriver
         public const string NOTAPPLICABLEVALUE = "Criteria not applicable";
 
         /// <summary>
-        /// The data to write to the excel sheet.
-        /// </summary>
-        public Dictionary<string, List<string>> ExcelData;
-
-        /// <summary>
-        /// Name of the project.
-        /// </summary>
-        public string ProjectName;
-
-        /// <summary>
-        /// The url of the project.
-        /// </summary>
-        public string ProjectUrl;
-
-        /// <summary>
-        /// The date this was modified.
-        /// </summary>
-        public string Date;
-
-        /// <summary>
-        /// The location to save the file to.
-        /// </summary>
-        public string FileLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA+Result.xlsx";
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="TestReportExcel"/> class.
         /// Creates a new Excel report.
         /// </summary>
@@ -65,6 +40,31 @@ namespace AxeAccessibilityDriver
         {
             this.ExcelData = new Dictionary<string, List<string>>();
         }
+
+        /// <summary>
+        /// Gets or sets the data to write to the excel sheet.
+        /// </summary>
+        public Dictionary<string, List<string>> ExcelData { get; set; }
+
+        /// <summary>
+        /// Gets or sets name of the project.
+        /// </summary>
+        public string ProjectName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the url of the project.
+        /// </summary>
+        public string ProjectUrl { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date this was modified.
+        /// </summary>
+        public string Date { get; set; }
+
+        /// <summary>
+        /// Gets or sets the location to save the file to.
+        /// </summary>
+        public string FileLocation { get; set; } = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA+Result.xlsx";
 
         /// <summary>
         /// Writes the aoda results to the excel file.
@@ -100,15 +100,17 @@ namespace AxeAccessibilityDriver
                 int rowId = this.FindIdWithValue(key, sheet);
                 int colIndex = 2;
 
-                foreach (string col in this.ExcelData[key])
+                if (rowId >= 0)
                 {
-                    IRow row = sheet.GetRow(rowId);
-                    ICell cell = row.GetCell(colIndex);
-                    cell.SetCellValue(col);
-                    colIndex++;
+                    foreach (string col in this.ExcelData[key])
+                    {
+                        IRow row = sheet.GetRow(rowId);
+                        ICell cell = row.GetCell(colIndex);
+                        cell.SetCellValue(col);
+                        colIndex++;
+                    }
                 }
             }
-
 
             // write to output.
             using (FileStream fileStream = new FileStream(resultFilePath, FileMode.Create, FileAccess.Write))
@@ -132,6 +134,5 @@ namespace AxeAccessibilityDriver
 
             return id;
         }
-
     }
 }

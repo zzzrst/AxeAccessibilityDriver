@@ -150,7 +150,7 @@ namespace AxeAccessibilityDriver
                             new JProperty("Help URL", this.ruleInfo[ruleID.Key].HelpUrl),
                             new JProperty("Nodes", nodeInfoList));
 
-                        this.WriteToExcelData(excelReport, this.ruleInfo[ruleID.Key].RuleTag, resultType.Key, $"{this.ruleInfo[ruleID.Key].Help}\n{ this.ruleInfo[ruleID.Key].HelpUrl}");
+                        this.WriteToExcelData(excelReport, this.ruleInfo[ruleID.Key].RuleTag, resultType.Key, $"{this.ruleInfo[ruleID.Key].Help}\n{this.ruleInfo[ruleID.Key].HelpUrl}");
 
                         // record occurance on page
                         rulePageSummary.Add(
@@ -204,7 +204,6 @@ namespace AxeAccessibilityDriver
 
         private void WriteToExcelData(TestReportExcel excelReport, List<string> ruleTag, string resultString, string comment)
         {
-
             // add it into the excel sheet.
             string rowName = null;
             string levelValue = "A";
@@ -227,14 +226,27 @@ namespace AxeAccessibilityDriver
 
             rowName = ruleTag.Find(s => s.Contains("wcag") && s != "wcag2a" && s != "wcag2aa");
 
+            // add the key.
             if (rowName != null)
             {
-                rowName = rowName.Substring(4, rowName.Length);
-                rowName = rowName.Aggregate(string.Empty, (c, i) => c + i + '.');
-                rowName = rowName.Substring(0, rowName.Length - 1);
                 Console.WriteLine(rowName);
+                rowName = rowName.Substring(4);
+                rowName = rowName.Aggregate(string.Empty, (c, i) => c + i + '.');
+                rowName = rowName.Substring(0, rowName.Length);
+                Console.WriteLine(rowName);
+                Console.WriteLine("___________");
 
-                excelReport.ExcelData.Add(rowName, row);
+                if (excelReport.ExcelData.ContainsKey(rowName))
+                {
+                    if (excelReport.ExcelData[rowName][int.Parse(ResourceHelper.GetString("CriteriaColumn"))] == "Pass")
+                    {
+                        excelReport.ExcelData[rowName] = row;
+                    }
+                }
+                else
+                {
+                    excelReport.ExcelData.Add(rowName, row);
+                }
             }
         }
 
