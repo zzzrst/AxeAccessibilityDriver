@@ -20,7 +20,7 @@ namespace AxeAccessibilityDriver
     {
         private const string TALLIEDRESULT = "TalliedResult.csv";
         private const string RULEPAGESUMMARY = "RulePageSummary.csv";
-        private const string AODAEXCELREPORT = "AODAReport.csv";
+        private const string AODAEXCELREPORT = "AODAReport.xlsx";
 
         /// <summary>
         /// Result Type -> { Rule ID -> {Page URL -> HTML, Target, Data, Related Nodes} }.
@@ -105,7 +105,7 @@ namespace AxeAccessibilityDriver
         {
             TestReportExcel excelReport = new TestReportExcel()
             {
-                FileLocation = folderLocation + AODAEXCELREPORT,
+                FileLocation = folderLocation + "\\" + AODAEXCELREPORT,
             };
 
             List<string> rulePageSummary = new List<string>()
@@ -224,17 +224,14 @@ namespace AxeAccessibilityDriver
             // Add Comments.
             row.Add(comment);
 
-            rowName = ruleTag.Find(s => s.Contains("wcag") && s != "wcag2a" && s != "wcag2aa");
+            rowName = ruleTag.Find(s => s.Contains("wcag") && !s.Contains("2a"));
 
             // add the key.
             if (rowName != null)
             {
-                Console.WriteLine(rowName);
                 rowName = rowName.Substring(4);
                 rowName = rowName.Aggregate(string.Empty, (c, i) => c + i + '.');
-                rowName = rowName.Substring(0, rowName.Length);
-                Console.WriteLine(rowName);
-                Console.WriteLine("___________");
+                rowName = rowName.Substring(0, rowName.Length - 1);
 
                 if (excelReport.ExcelData.ContainsKey(rowName))
                 {

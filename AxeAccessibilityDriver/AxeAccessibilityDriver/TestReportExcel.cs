@@ -64,7 +64,7 @@ namespace AxeAccessibilityDriver
         /// <summary>
         /// Gets or sets the location to save the file to.
         /// </summary>
-        public string FileLocation { get; set; } = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA+Result.xlsx";
+        public string FileLocation { get; set; } = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA_Result.xlsx";
 
         /// <summary>
         /// Writes the aoda results to the excel file.
@@ -104,9 +104,8 @@ namespace AxeAccessibilityDriver
                 {
                     foreach (string col in this.ExcelData[key])
                     {
-                        IRow row = sheet.GetRow(rowId);
-                        ICell cell = row.GetCell(colIndex);
-                        cell.SetCellValue(col);
+                        Console.WriteLine($"{rowId} {colIndex} {col}");
+                        sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
                         colIndex++;
                     }
                 }
@@ -122,6 +121,8 @@ namespace AxeAccessibilityDriver
 
         private int FindIdWithValue(string key, ISheet sheet)
         {
+            Console.WriteLine("_______");
+            Console.WriteLine(key);
             int id = -1;
             for (int rowIndex = 12; rowIndex < 56; rowIndex++)
             {
@@ -132,6 +133,7 @@ namespace AxeAccessibilityDriver
                 }
             }
 
+            Console.WriteLine(id);
             return id;
         }
     }

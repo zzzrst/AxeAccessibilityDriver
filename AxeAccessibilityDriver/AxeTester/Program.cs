@@ -39,15 +39,6 @@ namespace AxeTester
             seleniumDriver.RunAODA("Google");
 
             SaveAODA();
-
-            TestReportExcel report = new TestReportExcel
-            {
-                ProjectName = "name",
-                ProjectUrl = "google",
-                Date = DateTime.Today.ToString(),
-            };
-
-            report.WriteToExcel();
         }
 
         /// <summary>
