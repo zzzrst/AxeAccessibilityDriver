@@ -59,5 +59,104 @@ namespace AxeAccessibilityDriver.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string CommentColumn {
+            get {
+                return ResourceManager.GetString("CommentColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string CriteriaColumn {
+            get {
+                return ResourceManager.GetString("CriteriaColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fail.
+        /// </summary>
+        internal static string CriteriaFail {
+            get {
+                return ResourceManager.GetString("CriteriaFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Criteria not applicable.
+        /// </summary>
+        internal static string CriteriaNA {
+            get {
+                return ResourceManager.GetString("CriteriaNA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pass.
+        /// </summary>
+        internal static string CriteriaPass {
+            get {
+                return ResourceManager.GetString("CriteriaPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CriteriaNA.
+        /// </summary>
+        internal static string Incomplete {
+            get {
+                return ResourceManager.GetString("Incomplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        internal static string LevelColumn {
+            get {
+                return ResourceManager.GetString("LevelColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CriteriaPass.
+        /// </summary>
+        internal static string Pass {
+            get {
+                return ResourceManager.GetString("Pass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WCAG 2.0 Compliance Checklist.
+        /// </summary>
+        internal static string SheetCheckList {
+            get {
+                return ResourceManager.GetString("SheetCheckList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Issue Tracking Log.
+        /// </summary>
+        internal static string SheetIssueLog {
+            get {
+                return ResourceManager.GetString("SheetIssueLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CriteriaFail.
+        /// </summary>
+        internal static string Violations {
+            get {
+                return ResourceManager.GetString("Violations", resourceCulture);
+            }
+        }
     }
 }
