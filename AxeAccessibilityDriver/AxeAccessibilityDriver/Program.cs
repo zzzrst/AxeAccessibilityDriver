@@ -1,10 +1,21 @@
-﻿using System;
+﻿// <copyright file="Program.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace AxeAccessibilityDriver
 {
-    class Program
+    using System;
+
+    /// <summary>
+    /// Not used.
+    /// </summary>
+    public class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Not used.
+        /// </summary>
+        /// <param name="args">arguments.</param>
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
         }
