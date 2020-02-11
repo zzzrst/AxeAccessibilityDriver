@@ -31,10 +31,10 @@
                 LoadingSpinner = loadingSpinner,
             };
 
-            //seleniumDriver.NavigateToURL("https://www.google.ca/");
-            //seleniumDriver.RunAODA("Google");
+            seleniumDriver.NavigateToURL("https://www.google.ca/");
+            seleniumDriver.RunAODA("Google");
 
-            //SaveAODA();
+            SaveAODA();
 
             TestReportExcel report = new TestReportExcel
             {

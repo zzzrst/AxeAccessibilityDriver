@@ -55,7 +55,7 @@ namespace AxeAccessibilityDriver
         /// <summary>
         /// The location to save the file to.
         /// </summary>
-        public string FileLocation;
+        public string FileLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA+Result.xlsx";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TestReportExcel"/> class.
@@ -77,7 +77,7 @@ namespace AxeAccessibilityDriver
 
             string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA_Template.xlsx";
             string resultFilePath = this.FileLocation;
-
+            Console.WriteLine(resultFilePath);
             using (FileStream templateFS = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
                 workbook = new XSSFWorkbook(templateFS);

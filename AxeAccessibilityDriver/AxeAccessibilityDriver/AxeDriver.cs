@@ -103,7 +103,10 @@ namespace AxeAccessibilityDriver
         /// <param name="folderLocation">Location to save all the results.</param>
         public void LogResults(string folderLocation)
         {
-            TestReportExcel excelReport = new TestReportExcel();
+            TestReportExcel excelReport = new TestReportExcel()
+            {
+                FileLocation = folderLocation + AODAEXCELREPORT,
+            };
 
             List<string> rulePageSummary = new List<string>()
             {
@@ -196,7 +199,6 @@ namespace AxeAccessibilityDriver
                 }
             }
 
-            excelReport.FileLocation = folderLocation + AODAEXCELREPORT;
             excelReport.WriteToExcel();
         }
 
