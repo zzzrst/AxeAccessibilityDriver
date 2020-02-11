@@ -1,4 +1,8 @@
-﻿namespace AxeTester
+﻿// <copyright file="Program.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace AxeTester
 {
     using System;
     using System.IO;
@@ -7,7 +11,7 @@
     using AxeAccessibilityDriver;
 
     /// <summary>
-    /// Main program
+    /// Main program.
     /// </summary>
     internal class Program
     {
