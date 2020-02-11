@@ -150,7 +150,23 @@ namespace AxeAccessibilityDriver
                             new JProperty("Help URL", this.ruleInfo[ruleID.Key].HelpUrl),
                             new JProperty("Nodes", nodeInfoList));
 
-                        this.WriteToExcelData(excelReport, this.ruleInfo[ruleID.Key].RuleTag, resultType.Key, $"{this.ruleInfo[ruleID.Key].Help}\n{this.ruleInfo[ruleID.Key].HelpUrl}");
+                        // pass, fail or n/a.
+                        string criteriaString = ResourceHelper.GetString(ResourceHelper.GetString(resultType.Key));
+
+                        // add it to the excel data
+                        this.WriteToExcelData(excelReport, this.ruleInfo[ruleID.Key].RuleTag, criteriaString, $"{this.ruleInfo[ruleID.Key].Help}\r\n{this.ruleInfo[ruleID.Key].HelpUrl}");
+
+                        // add it to the excel issue list only if it failed.
+                        if (criteriaString.Equals(ResourceHelper.GetString("CriteriaFail")))
+                        {
+                            excelReport.IssueList.Add(new IssueLog()
+                            {
+                                Criterion = this.GetCriteriaId(this.ruleInfo[ruleID.Key].RuleTag),
+                                Impact = this.ruleInfo[ruleID.Key].Impact,
+                                Description = this.ruleInfo[ruleID.Key].Help,
+                                Url = currentURL,
+                            });
+                        }
 
                         // record occurance on page
                         rulePageSummary.Add(
@@ -202,6 +218,13 @@ namespace AxeAccessibilityDriver
             excelReport.WriteToExcel();
         }
 
+        /// <summary>
+        /// Writes the result to the excel sheet under checklist.
+        /// </summary>
+        /// <param name="excelReport">The excel sheet.</param>
+        /// <param name="ruleTag">List of rules.</param>
+        /// <param name="resultString">If it passed or failed.</param>
+        /// <param name="comment">any comments that it comes with.</param>
         private void WriteToExcelData(TestReportExcel excelReport, List<string> ruleTag, string resultString, string comment)
         {
             // add it into the excel sheet.
@@ -219,22 +242,23 @@ namespace AxeAccessibilityDriver
             row.Add(levelValue);
 
             // Add Criteria.
-            row.Add(ResourceHelper.GetString(ResourceHelper.GetString(resultString)));
+            row.Add(resultString);
 
             // Add Comments.
             row.Add(comment);
 
-            rowName = ruleTag.Find(s => s.Contains("wcag") && !s.Contains("1a") && !s.Contains("2a"));
+            // foreach(string tag in ruleTag)
+            //    Console.WriteLine(tag);
+
+            rowName = this.GetCriteriaId(ruleTag);
 
             // add the key.
             if (rowName != null)
             {
-                rowName = rowName.Substring(4);
-                rowName = rowName.Aggregate(string.Empty, (c, i) => c + i + '.');
-                rowName = rowName.Substring(0, rowName.Length - 1);
-
+                // If there is an existing data.
                 if (excelReport.ExcelData.ContainsKey(rowName))
                 {
+                    // If any one column is a fail, it will change the result to a fail.
                     if (excelReport.ExcelData[rowName][int.Parse(ResourceHelper.GetString("CriteriaColumn"))] != "Fail")
                     {
                         excelReport.ExcelData[rowName] = row;
@@ -245,6 +269,27 @@ namespace AxeAccessibilityDriver
                     excelReport.ExcelData.Add(rowName, row);
                 }
             }
+        }
+
+        /// <summary>
+        /// Finds the Criteria Id inside the ruleTags.
+        /// </summary>
+        /// <param name="ruleTag"></param>
+        /// <returns></returns>
+        private string GetCriteriaId(List<string> ruleTag)
+        {
+            string id = null;
+
+            id = ruleTag.Find(s => s.Contains("wcag") && !s.Contains("1a") && !s.Contains("2a"));
+
+            if (id != null)
+            {
+                id = id.Substring(4);
+                id = id.Aggregate(string.Empty, (c, i) => c + i + '.');
+                id = id.Substring(0, id.Length - 1);
+            }
+
+            return id;
         }
 
         /// <summary>

@@ -39,12 +39,18 @@ namespace AxeAccessibilityDriver
         public TestReportExcel()
         {
             this.ExcelData = new Dictionary<string, List<string>>();
+            this.IssueList = new List<IssueLog>();
         }
 
         /// <summary>
         /// Gets or sets the data to write to the excel sheet.
         /// </summary>
         public Dictionary<string, List<string>> ExcelData { get; set; }
+
+        /// <summary>
+        /// Gets or sets the AODA defects.
+        /// </summary>
+        public List<IssueLog> IssueList { get; set; }
 
         /// <summary>
         /// Gets or sets name of the project.
@@ -73,8 +79,6 @@ namespace AxeAccessibilityDriver
         {
             IWorkbook workbook = null;
 
-            ISheet sheet = null;
-
             string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA_Template.xlsx";
             string resultFilePath = this.FileLocation;
             Console.WriteLine(resultFilePath);
@@ -82,6 +86,21 @@ namespace AxeAccessibilityDriver
             {
                 workbook = new XSSFWorkbook(templateFS);
             }
+
+            this.UpdateChecklistSheet(workbook);
+            this.UpdateIssueSheet(workbook);
+
+            // write to output.
+            using (FileStream fileStream = new FileStream(resultFilePath, FileMode.Create, FileAccess.Write))
+            {
+                workbook.Write(fileStream);
+                workbook.Close();
+            }
+        }
+
+        private void UpdateChecklistSheet(IWorkbook workbook)
+        {
+            ISheet sheet = null;
 
             // Define styles
             ICellStyle passStyle = workbook.CreateCellStyle();
@@ -92,7 +111,10 @@ namespace AxeAccessibilityDriver
             failStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.Red.Index;
             failStyle.FillPattern = FillPattern.SolidForeground;
 
-            // get the sheet to modify.
+            ICellStyle commentStyle = workbook.CreateCellStyle();
+            commentStyle.WrapText = true;
+
+            // get the checklist sheet to modify.
             sheet = workbook.GetSheet(ResourceHelper.GetString("SheetCheckList"));
 
             foreach (string key in this.ExcelData.Keys)
@@ -104,8 +126,21 @@ namespace AxeAccessibilityDriver
                 {
                     foreach (string col in this.ExcelData[key])
                     {
-                        Console.WriteLine($"{rowId} {colIndex} {col}");
-                        sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
+                        // if this is the comment column
+                        if (colIndex == 2 + int.Parse(ResourceHelper.GetString("CommentColumn")))
+                        {
+                            // only put comments on rows that fail.
+                            if (this.ExcelData[key][int.Parse(ResourceHelper.GetString("CriteriaColumn"))].Equals("Fail"))
+                            {
+                                sheet.GetRow(rowId).GetCell(colIndex).CellStyle = commentStyle;
+                                sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
+                            }
+                        }
+                        else
+                        {
+                            sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
+                        }
+
                         colIndex++;
                     }
                 }
@@ -114,12 +149,29 @@ namespace AxeAccessibilityDriver
             // update the total
             workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateFormulaCell(sheet.GetRow(62).GetCell(3));
 
-            // write to output.
-            using (FileStream fileStream = new FileStream(resultFilePath, FileMode.Create, FileAccess.Write))
-            {
-                workbook.Write(fileStream);
-                workbook.Close();
-            }
+            // set the date
+            sheet.GetRow(3).GetCell(2).SetCellValue(DateTime.Now.ToString());
+        }
+
+        private void UpdateIssueSheet(IWorkbook workbook)
+        {
+            ISheet sheet = null;
+
+            // set the date
+            string date = DateTime.Now.ToString("dd/MM/yy");
+
+            // Define styles
+            ICellStyle passStyle = workbook.CreateCellStyle();
+            passStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.Green.Index;
+            passStyle.FillPattern = FillPattern.SolidForeground;
+
+            ICellStyle failStyle = workbook.CreateCellStyle();
+            failStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.Red.Index;
+            failStyle.FillPattern = FillPattern.SolidForeground;
+
+            // get the checklist sheet to modify.
+            sheet = workbook.GetSheet(ResourceHelper.GetString("SheetIssueLog"));
+
         }
 
         private int FindIdWithValue(string key, ISheet sheet)
@@ -136,7 +188,6 @@ namespace AxeAccessibilityDriver
                 }
             }
 
-            Console.WriteLine(id);
             return id;
         }
     }
