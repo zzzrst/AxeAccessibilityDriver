@@ -224,7 +224,7 @@ namespace AxeAccessibilityDriver
             // Add Comments.
             row.Add(comment);
 
-            rowName = ruleTag.Find(s => s.Contains("wcag") && !s.Contains("2a"));
+            rowName = ruleTag.Find(s => s.Contains("wcag") && !s.Contains("1a") && !s.Contains("2a"));
 
             // add the key.
             if (rowName != null)
@@ -235,7 +235,7 @@ namespace AxeAccessibilityDriver
 
                 if (excelReport.ExcelData.ContainsKey(rowName))
                 {
-                    if (excelReport.ExcelData[rowName][int.Parse(ResourceHelper.GetString("CriteriaColumn"))] == "Pass")
+                    if (excelReport.ExcelData[rowName][int.Parse(ResourceHelper.GetString("CriteriaColumn"))] != "Fail")
                     {
                         excelReport.ExcelData[rowName] = row;
                     }

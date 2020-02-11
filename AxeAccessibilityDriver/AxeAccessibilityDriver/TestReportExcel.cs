@@ -111,6 +111,9 @@ namespace AxeAccessibilityDriver
                 }
             }
 
+            // update the total
+            workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateFormulaCell(sheet.GetRow(62).GetCell(3));
+
             // write to output.
             using (FileStream fileStream = new FileStream(resultFilePath, FileMode.Create, FileAccess.Write))
             {
