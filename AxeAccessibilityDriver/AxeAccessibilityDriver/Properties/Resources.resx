@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CommentColumn" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
     <comment>The column index of the comments</comment>
   </data>
   <data name="CriteriaColumn" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
     <comment>The column index of the criteria</comment>
   </data>
   <data name="CriteriaFail" xml:space="preserve">
@@ -152,10 +152,6 @@
   <data name="IssueKeyserious" xml:space="preserve">
     <value>Medium</value>
     <comment>Maps the serious issue to whatever serious is for Excel document</comment>
-  </data>
-  <data name="LevelColumn" xml:space="preserve">
-    <value>0</value>
-    <comment>The column index for the level, A or AA</comment>
   </data>
   <data name="Pass" xml:space="preserve">
     <value>CriteriaPass</value>

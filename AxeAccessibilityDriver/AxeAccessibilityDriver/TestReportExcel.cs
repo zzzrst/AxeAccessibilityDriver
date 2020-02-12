@@ -120,14 +120,14 @@ namespace AxeAccessibilityDriver
             foreach (string key in this.ExcelData.Keys)
             {
                 int rowId = this.FindIdWithValue(key, sheet);
-                int colIndex = 2;
+                int colIndex = 3;
 
                 if (rowId >= 0)
                 {
                     foreach (string col in this.ExcelData[key])
                     {
                         // if this is the comment column
-                        if (colIndex == 2 + int.Parse(ResourceHelper.GetString("CommentColumn")))
+                        if (colIndex == 3 + int.Parse(ResourceHelper.GetString("CommentColumn")))
                         {
                             // only put comments on rows that fail.
                             if (this.ExcelData[key][int.Parse(ResourceHelper.GetString("CriteriaColumn"))].Equals("Fail"))

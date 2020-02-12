@@ -61,7 +61,7 @@ namespace AxeAccessibilityDriver.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2.
+        ///   Looks up a localized string similar to 1.
         /// </summary>
         internal static string CommentColumn {
             get {
@@ -70,7 +70,7 @@ namespace AxeAccessibilityDriver.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.
+        ///   Looks up a localized string similar to 0.
         /// </summary>
         internal static string CriteriaColumn {
             get {
@@ -138,15 +138,6 @@ namespace AxeAccessibilityDriver.Properties {
         internal static string IssueKeyserious {
             get {
                 return ResourceManager.GetString("IssueKeyserious", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 0.
-        /// </summary>
-        internal static string LevelColumn {
-            get {
-                return ResourceManager.GetString("LevelColumn", resourceCulture);
             }
         }
         
