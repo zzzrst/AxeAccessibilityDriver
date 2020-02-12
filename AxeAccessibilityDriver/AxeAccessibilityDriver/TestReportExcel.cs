@@ -242,7 +242,7 @@ namespace AxeAccessibilityDriver
             sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfOrange, cfYellow });
 
             // set the date
-            string date = DateTime.Now.ToString("dd/MM/yyyy");
+            string date = DateTime.Now.ToString("yyyy/MMMM/dd");
 
             // get all the criterion options.
             List<string> criterionOptions = new List<string>();
