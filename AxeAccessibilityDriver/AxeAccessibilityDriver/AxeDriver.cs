@@ -229,17 +229,10 @@ namespace AxeAccessibilityDriver
         {
             // add it into the excel sheet.
             string rowName = null;
-            string levelValue = "A";
+            int criteriaColumn = int.Parse(ResourceHelper.GetString("CriteriaColumn"));
+            int commentColumn = int.Parse(ResourceHelper.GetString("CommentColumn"));
 
             List<string> row = new List<string>();
-
-            // Add Level Column.
-            if (ruleTag.Contains("wcag2aa"))
-            {
-                levelValue = "AA";
-            }
-
-            row.Add(levelValue);
 
             // Add Criteria.
             row.Add(resultString);
@@ -255,10 +248,15 @@ namespace AxeAccessibilityDriver
                 // If there is an existing data.
                 if (excelReport.ExcelData.ContainsKey(rowName))
                 {
-                    // If any one column is a fail, it will change the result to a fail.
-                    if (excelReport.ExcelData[rowName][int.Parse(ResourceHelper.GetString("CriteriaColumn"))] != "Fail")
+                    // If any one row is a fail, it will change the result to a fail.
+                    if (excelReport.ExcelData[rowName][criteriaColumn] != "Fail")
                     {
                         excelReport.ExcelData[rowName] = row;
+                    }
+                    else
+                    {
+                        // if the row is already a fail, add more comments to it.
+                        excelReport.ExcelData[rowName][commentColumn] += $"\r\n{row[commentColumn]}";
                     }
                 }
                 else
