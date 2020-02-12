@@ -247,9 +247,6 @@ namespace AxeAccessibilityDriver
             // Add Comments.
             row.Add(comment);
 
-            // foreach(string tag in ruleTag)
-            //    Console.WriteLine(tag);
-
             rowName = this.GetCriteriaId(ruleTag);
 
             // add the key.
