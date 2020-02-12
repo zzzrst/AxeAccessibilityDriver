@@ -104,7 +104,7 @@ namespace AxeAccessibilityDriver
 
             // Define styles
             ICellStyle passStyle = workbook.CreateCellStyle();
-            passStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.Green.Index;
+            passStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.BrightGreen.Index;
             passStyle.FillPattern = FillPattern.SolidForeground;
 
             ICellStyle failStyle = workbook.CreateCellStyle();
