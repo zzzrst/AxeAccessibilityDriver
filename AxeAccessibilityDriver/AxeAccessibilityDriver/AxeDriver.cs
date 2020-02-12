@@ -162,7 +162,7 @@ namespace AxeAccessibilityDriver
                             excelReport.IssueList.Add(new IssueLog()
                             {
                                 Criterion = this.GetCriteriaId(this.ruleInfo[ruleID.Key].RuleTag),
-                                Impact = this.ruleInfo[ruleID.Key].Impact,
+                                Impact = ResourceHelper.GetString($"IssueKey{this.ruleInfo[ruleID.Key].Impact}"),
                                 Description = this.ruleInfo[ruleID.Key].Help,
                                 Url = currentURL,
                             });
@@ -274,8 +274,8 @@ namespace AxeAccessibilityDriver
         /// <summary>
         /// Finds the Criteria Id inside the ruleTags.
         /// </summary>
-        /// <param name="ruleTag"></param>
-        /// <returns></returns>
+        /// <param name="ruleTag">List of tags.</param>
+        /// <returns>the id.</returns>
         private string GetCriteriaId(List<string> ruleTag)
         {
             string id = null;

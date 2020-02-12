@@ -81,7 +81,7 @@ namespace AxeAccessibilityDriver
 
             string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA_Template.xlsx";
             string resultFilePath = this.FileLocation;
-            Console.WriteLine(resultFilePath);
+
             using (FileStream templateFS = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
                 workbook = new XSSFWorkbook(templateFS);
@@ -158,7 +158,7 @@ namespace AxeAccessibilityDriver
             ISheet sheet = null;
 
             // set the date
-            string date = DateTime.Now.ToString("dd/MM/yy");
+            string date = DateTime.Now.ToString("dd/MM/yyyy");
 
             // Define styles
             ICellStyle passStyle = workbook.CreateCellStyle();
@@ -172,6 +172,32 @@ namespace AxeAccessibilityDriver
             // get the checklist sheet to modify.
             sheet = workbook.GetSheet(ResourceHelper.GetString("SheetIssueLog"));
 
+            // get all the criterion options.
+            List<string> criterionOptions = new List<string>();
+            for (int i = 1; i < 38; i++)
+            {
+                criterionOptions.Add(sheet.GetRow(i).GetCell(14).ToString());
+            }
+
+            for (int x = 0; x < this.IssueList.Count; x++)
+            {
+                IssueLog issueLog = this.IssueList[x];
+                IRow row = sheet.GetRow(3 + x);
+                row.GetCell(0).SetCellValue(x + 1);
+                row.GetCell(1).SetCellValue(date);
+                row.GetCell(2).SetCellValue(issueLog.Url);
+
+                // If it is null, it usualy means best practices.
+                if (issueLog.Criterion != null)
+                {
+                    row.GetCell(3).SetCellValue(criterionOptions.Find(s => s.Contains(issueLog.Criterion)));
+                }
+
+                row.GetCell(4).SetCellValue(issueLog.Description);
+                row.GetCell(5).SetCellValue(issueLog.Impact);
+                row.GetCell(6).SetCellValue("Current");
+                row.GetCell(7).SetCellValue("To be Determined");
+            }
         }
 
         private int FindIdWithValue(string key, ISheet sheet)

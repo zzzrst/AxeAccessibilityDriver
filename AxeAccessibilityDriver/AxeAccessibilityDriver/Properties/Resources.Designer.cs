@@ -115,6 +115,33 @@ namespace AxeAccessibilityDriver.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to High.
+        /// </summary>
+        internal static string IssueKeycritical {
+            get {
+                return ResourceManager.GetString("IssueKeycritical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low.
+        /// </summary>
+        internal static string IssueKeymoderate {
+            get {
+                return ResourceManager.GetString("IssueKeymoderate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium.
+        /// </summary>
+        internal static string IssueKeyserious {
+            get {
+                return ResourceManager.GetString("IssueKeyserious", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
         internal static string LevelColumn {
