@@ -134,8 +134,6 @@ namespace AxeAccessibilityDriver
                 CellRangeAddress.ValueOf("D43:D52"), CellRangeAddress.ValueOf("D55:D56"),
             };
 
-            Console.WriteLine(cfRange.Length);
-
             sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfGreen, cfYellow });
 
             // Define styles
@@ -180,22 +178,42 @@ namespace AxeAccessibilityDriver
 
         private void UpdateIssueSheet(IWorkbook workbook)
         {
-            ISheet sheet = null;
+            // get the checklist sheet to modify.
+            ISheet sheet = workbook.GetSheet(ResourceHelper.GetString("SheetIssueLog"));
+
+            // Define formatting.
+            XSSFSheetConditionalFormatting sCF = (XSSFSheetConditionalFormatting)sheet.SheetConditionalFormatting;
+
+            // Fill Red if High
+            XSSFConditionalFormattingRule cfRed =
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"High\"");
+            XSSFPatternFormatting fillRed = (XSSFPatternFormatting)cfRed.CreatePatternFormatting();
+            fillRed.FillBackgroundColor = IndexedColors.Red.Index;
+            fillRed.FillPattern = FillPattern.SolidForeground;
+
+            // Fill Orange if Medium
+            XSSFConditionalFormattingRule cfOrange =
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"Medium\"");
+            XSSFPatternFormatting fillOrange = (XSSFPatternFormatting)cfOrange.CreatePatternFormatting();
+            fillOrange.FillBackgroundColor = IndexedColors.Gold.Index;
+            fillOrange.FillPattern = FillPattern.SolidForeground;
+
+            // Fill yellow if low
+            XSSFConditionalFormattingRule cfYellow =
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"Low\"");
+            XSSFPatternFormatting fillYellow = (XSSFPatternFormatting)cfYellow.CreatePatternFormatting();
+            fillYellow.FillBackgroundColor = IndexedColors.LightYellow.Index;
+            fillYellow.FillPattern = FillPattern.SolidForeground;
+
+            CellRangeAddress[] cfRange =
+            {
+                CellRangeAddress.ValueOf($"F4:F{4 + this.IssueList.Count}"),
+            };
+
+            sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfOrange, cfYellow });
 
             // set the date
             string date = DateTime.Now.ToString("dd/MM/yyyy");
-
-            // Define styles
-            ICellStyle passStyle = workbook.CreateCellStyle();
-            passStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.Green.Index;
-            passStyle.FillPattern = FillPattern.SolidForeground;
-
-            ICellStyle failStyle = workbook.CreateCellStyle();
-            failStyle.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.Red.Index;
-            failStyle.FillPattern = FillPattern.SolidForeground;
-
-            // get the checklist sheet to modify.
-            sheet = workbook.GetSheet(ResourceHelper.GetString("SheetIssueLog"));
 
             // get all the criterion options.
             List<string> criterionOptions = new List<string>();
