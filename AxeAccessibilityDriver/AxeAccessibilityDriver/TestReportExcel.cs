@@ -104,37 +104,7 @@ namespace AxeAccessibilityDriver
             // get the checklist sheet to modify.
             ISheet sheet = workbook.GetSheet(ResourceHelper.GetString("SheetCheckList"));
 
-            // Define formatting.
-            XSSFSheetConditionalFormatting sCF = (XSSFSheetConditionalFormatting)sheet.SheetConditionalFormatting;
-
-            // Fill Green if Passing Score
-            XSSFConditionalFormattingRule cfGreen =
-                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"Pass\"");
-            XSSFPatternFormatting fillGreen = (XSSFPatternFormatting)cfGreen.CreatePatternFormatting();
-            fillGreen.FillBackgroundColor = IndexedColors.LightGreen.Index;
-            fillGreen.FillPattern = FillPattern.SolidForeground;
-
-            // Fill Red if Failing Score
-            XSSFConditionalFormattingRule cfRed =
-                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"Fail\"");
-            XSSFPatternFormatting fillRed = (XSSFPatternFormatting)cfRed.CreatePatternFormatting();
-            fillRed.FillBackgroundColor = IndexedColors.Rose.Index;
-            fillRed.FillPattern = FillPattern.SolidForeground;
-
-            // Fill yellow if blank Score
-            XSSFConditionalFormattingRule cfYellow =
-                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"\"");
-            XSSFPatternFormatting fillYellow = (XSSFPatternFormatting)cfYellow.CreatePatternFormatting();
-            fillYellow.FillBackgroundColor = IndexedColors.LightYellow.Index;
-            fillYellow.FillPattern = FillPattern.SolidForeground;
-
-            CellRangeAddress[] cfRange =
-            {
-                CellRangeAddress.ValueOf("D13:D26"), CellRangeAddress.ValueOf("D29:D40"),
-                CellRangeAddress.ValueOf("D43:D52"), CellRangeAddress.ValueOf("D55:D56"),
-            };
-
-            sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfGreen, cfYellow });
+            this.DefineColourFormattingChecklistSheet(sheet);
 
             // Define styles
             ICellStyle commentStyle = workbook.CreateCellStyle();
@@ -174,6 +144,65 @@ namespace AxeAccessibilityDriver
 
             // set the date
             sheet.GetRow(3).GetCell(2).SetCellValue(DateTime.Now.ToString());
+        }
+
+        /// <summary>
+        /// Defines the conditional formatting for the checklist sheet.
+        /// </summary>
+        /// <param name="sheet">the checklist sheet.</param>
+        private void DefineColourFormattingChecklistSheet(ISheet sheet)
+        {
+            // Define formatting.
+            XSSFSheetConditionalFormatting sCF = (XSSFSheetConditionalFormatting)sheet.SheetConditionalFormatting;
+
+            // Fill Green if Passing Score
+            XSSFConditionalFormattingRule cfGreen =
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"Pass\"");
+            XSSFPatternFormatting fillGreen = (XSSFPatternFormatting)cfGreen.CreatePatternFormatting();
+            fillGreen.FillBackgroundColor = IndexedColors.LightGreen.Index;
+            fillGreen.FillPattern = FillPattern.SolidForeground;
+
+            // Fill Red if Failing Score
+            XSSFConditionalFormattingRule cfRed =
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"Fail\"");
+            XSSFPatternFormatting fillRed = (XSSFPatternFormatting)cfRed.CreatePatternFormatting();
+            fillRed.FillBackgroundColor = IndexedColors.Rose.Index;
+            fillRed.FillPattern = FillPattern.SolidForeground;
+
+            // Fill yellow if blank Score
+            XSSFConditionalFormattingRule cfYellow =
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"\"");
+            XSSFPatternFormatting fillYellow = (XSSFPatternFormatting)cfYellow.CreatePatternFormatting();
+            fillYellow.FillBackgroundColor = IndexedColors.LightYellow.Index;
+            fillYellow.FillPattern = FillPattern.SolidForeground;
+
+            CellRangeAddress[] cfRange =
+            {
+                CellRangeAddress.ValueOf("D13:D26"), CellRangeAddress.ValueOf("D29:D40"),
+                CellRangeAddress.ValueOf("D43:D52"), CellRangeAddress.ValueOf("D55:D56"),
+            };
+
+            sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfGreen, cfYellow });
+
+            // fill in the success criteria
+
+            // Fill Green if Passing Score
+            cfGreen =
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.LessThanOrEqual, "0");
+            fillGreen = (XSSFPatternFormatting)cfGreen.CreatePatternFormatting();
+            fillGreen.FillBackgroundColor = IndexedColors.LightGreen.Index;
+            fillGreen.FillPattern = FillPattern.SolidForeground;
+
+            // Fill Red if Failing Score
+            cfRed =
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.GreaterThan, "0");
+            fillRed = (XSSFPatternFormatting)cfRed.CreatePatternFormatting();
+            fillRed.FillBackgroundColor = IndexedColors.Rose.Index;
+            fillRed.FillPattern = FillPattern.SolidForeground;
+
+            sCF.AddConditionalFormatting(
+                new CellRangeAddress[] { CellRangeAddress.ValueOf("D63") },
+                new XSSFConditionalFormattingRule[] { cfRed, cfGreen, cfYellow });
         }
 
         private void UpdateIssueSheet(IWorkbook workbook)
