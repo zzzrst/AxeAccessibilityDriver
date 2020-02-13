@@ -127,6 +127,7 @@ namespace AxeAccessibilityDriver
                         {
                             sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
                         }
+
                         colIndex++;
                     }
                 }
