@@ -4,7 +4,8 @@
 | ------------- |---------------|
 | Pass          | Pass          |
 | Violation     | Fail          | 
-| Incomplete    | Criteria not applicable      |
+| Incomplete    |       |
+| Inapplicable    | Criteria not applicable      |
 
 ## WATR Report Issue Sheet
 |Axe            | Excel          |
