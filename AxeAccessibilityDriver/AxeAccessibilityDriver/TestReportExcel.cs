@@ -157,14 +157,14 @@ namespace AxeAccessibilityDriver
 
             // Fill Green if Passing Score
             XSSFConditionalFormattingRule cfGreen =
-                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"Pass\"");
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, $"\"{ResourceHelper.GetString("CriteriaPass")}\"");
             XSSFPatternFormatting fillGreen = (XSSFPatternFormatting)cfGreen.CreatePatternFormatting();
             fillGreen.FillBackgroundColor = IndexedColors.LightGreen.Index;
             fillGreen.FillPattern = FillPattern.SolidForeground;
 
             // Fill Red if Failing Score
             XSSFConditionalFormattingRule cfRed =
-                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, "\"Fail\"");
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, $"\"{ResourceHelper.GetString("CriteriaFail")}\"");
             XSSFPatternFormatting fillRed = (XSSFPatternFormatting)cfRed.CreatePatternFormatting();
             fillRed.FillBackgroundColor = IndexedColors.Rose.Index;
             fillRed.FillPattern = FillPattern.SolidForeground;
@@ -176,15 +176,23 @@ namespace AxeAccessibilityDriver
             fillYellow.FillBackgroundColor = IndexedColors.LightYellow.Index;
             fillYellow.FillPattern = FillPattern.SolidForeground;
 
+            // Fill yellow if not applicable too
+            XSSFConditionalFormattingRule cfYellow2 =
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, $"\"{ResourceHelper.GetString("CriteriaNA")}\"");
+            XSSFPatternFormatting fillYellow2 = (XSSFPatternFormatting)cfYellow2.CreatePatternFormatting();
+            fillYellow2.FillBackgroundColor = IndexedColors.LightYellow.Index;
+            fillYellow2.FillPattern = FillPattern.SolidForeground;
+
             CellRangeAddress[] cfRange =
             {
                 CellRangeAddress.ValueOf("D13:D26"), CellRangeAddress.ValueOf("D29:D40"),
                 CellRangeAddress.ValueOf("D43:D52"), CellRangeAddress.ValueOf("D55:D56"),
             };
 
-            sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfGreen, cfYellow });
+            sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfGreen, cfYellow2, });
+            sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfYellow });
 
-            // fill in the success criteria
+            // fill in the success criteria score
 
             // Fill Green if Passing Score
             cfGreen =
@@ -210,6 +218,57 @@ namespace AxeAccessibilityDriver
             // get the checklist sheet to modify.
             ISheet sheet = workbook.GetSheet(ResourceHelper.GetString("SheetIssueLog"));
 
+            this.DefineColourFormattingIssueSheet(sheet);
+
+            ICellStyle hidden = workbook.CreateCellStyle();
+            hidden.IsHidden = true;
+
+            // set the date
+            string date = DateTime.Now.ToString("yyyy/MMMM/dd");
+
+            // get all the criterion options.
+            List<string> criterionOptions = new List<string>();
+            for (int i = 1; i < 38; i++)
+            {
+                criterionOptions.Add(sheet.GetRow(i).GetCell(14).ToString());
+            }
+
+            // print out all the issues
+            for (int x = 0; x < this.IssueList.Count; x++)
+            {
+                IssueLog issueLog = this.IssueList[x];
+                IRow row;
+
+                // create a new row.
+                row = sheet.CreateRow(3 + x);
+                for (int r = 0; r < 8; r++)
+                {
+                    row.CreateCell(r);
+                }
+
+                row.GetCell(0).SetCellValue(x + 1);
+                row.GetCell(1).SetCellValue(date);
+                row.GetCell(2).SetCellValue(issueLog.Url);
+
+                // If it is null, it usualy means best practices.
+                if (issueLog.Criterion != null)
+                {
+                    row.GetCell(3).SetCellValue(criterionOptions.Find(s => s.Contains(issueLog.Criterion)));
+                }
+
+                row.GetCell(4).SetCellValue(issueLog.Description);
+                row.GetCell(5).SetCellValue(issueLog.Impact);
+                row.GetCell(6).SetCellValue("Current");
+                row.GetCell(7).SetCellValue("To be Determined");
+            }
+
+            // Hide all the rows after
+            sheet.GroupRow(this.IssueList.Count + 3, sheet.LastRowNum);
+            sheet.SetRowGroupCollapsed(this.IssueList.Count + 3, true);
+        }
+
+        private void DefineColourFormattingIssueSheet(ISheet sheet)
+        {
             // Define formatting.
             XSSFSheetConditionalFormatting sCF = (XSSFSheetConditionalFormatting)sheet.SheetConditionalFormatting;
 
@@ -241,35 +300,6 @@ namespace AxeAccessibilityDriver
 
             sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfOrange, cfYellow });
 
-            // set the date
-            string date = DateTime.Now.ToString("yyyy/MMMM/dd");
-
-            // get all the criterion options.
-            List<string> criterionOptions = new List<string>();
-            for (int i = 1; i < 38; i++)
-            {
-                criterionOptions.Add(sheet.GetRow(i).GetCell(14).ToString());
-            }
-
-            for (int x = 0; x < this.IssueList.Count; x++)
-            {
-                IssueLog issueLog = this.IssueList[x];
-                IRow row = sheet.GetRow(3 + x);
-                row.GetCell(0).SetCellValue(x + 1);
-                row.GetCell(1).SetCellValue(date);
-                row.GetCell(2).SetCellValue(issueLog.Url);
-
-                // If it is null, it usualy means best practices.
-                if (issueLog.Criterion != null)
-                {
-                    row.GetCell(3).SetCellValue(criterionOptions.Find(s => s.Contains(issueLog.Criterion)));
-                }
-
-                row.GetCell(4).SetCellValue(issueLog.Description);
-                row.GetCell(5).SetCellValue(issueLog.Impact);
-                row.GetCell(6).SetCellValue("Current");
-                row.GetCell(7).SetCellValue("To be Determined");
-            }
         }
 
         private int FindIdWithValue(string key, ISheet sheet)
