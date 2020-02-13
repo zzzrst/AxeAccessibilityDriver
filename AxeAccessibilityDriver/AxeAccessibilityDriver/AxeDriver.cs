@@ -20,7 +20,7 @@ namespace AxeAccessibilityDriver
     {
         private const string TALLIEDRESULT = "TalliedResult.csv";
         private const string RULEPAGESUMMARY = "RulePageSummary.csv";
-        private const string AODAEXCELREPORT = "AODAReport.xlsx";
+        private const string AODAEXCELREPORT = "WATRReport.xlsx";
 
         /// <summary>
         /// Result Type -> { Rule ID -> {Page URL -> HTML, Target, Data, Related Nodes} }.

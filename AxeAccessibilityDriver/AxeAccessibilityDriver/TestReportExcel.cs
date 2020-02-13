@@ -71,7 +71,7 @@ namespace AxeAccessibilityDriver
         /// <summary>
         /// Gets or sets the location to save the file to.
         /// </summary>
-        public string FileLocation { get; set; } = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA_Result.xlsx";
+        public string FileLocation { get; set; } = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\WATR_Result.xlsx";
 
         /// <summary>
         /// Writes the aoda results to the excel file.
@@ -80,7 +80,7 @@ namespace AxeAccessibilityDriver
         {
             IWorkbook workbook = null;
 
-            string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AODA_Template.xlsx";
+            string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\WATR_Template.xlsx";
             string resultFilePath = this.FileLocation;
 
             using (FileStream templateFS = new FileStream(filePath, FileMode.Open, FileAccess.Read))
