@@ -115,7 +115,15 @@ namespace AxeAccessibilityDriver
                 {
                     foreach (string col in this.ExcelData[key])
                     {
-                        sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
+                        if (colIndex == 3 + int.Parse(ResourceHelper.GetString("CommentColumn")))
+                        {
+                            sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
+                        }
+                        else
+                        {
+                            sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
+                        }
+
                         colIndex++;
                     }
                 }
