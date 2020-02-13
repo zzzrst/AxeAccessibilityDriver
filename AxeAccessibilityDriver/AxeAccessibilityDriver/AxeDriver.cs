@@ -154,7 +154,7 @@ namespace AxeAccessibilityDriver
                         string criteriaString = ResourceHelper.GetString(ResourceHelper.GetString(resultType.Key));
 
                         // add it to the excel data
-                        this.WriteToExcelData(excelReport, this.ruleInfo[ruleID.Key].RuleTag, criteriaString, $"{this.ruleInfo[ruleID.Key].Help}\r\n{this.ruleInfo[ruleID.Key].HelpUrl}");
+                        this.WriteToExcelData(excelReport, this.ruleInfo[ruleID.Key].RuleTag, criteriaString, $"{this.ruleInfo[ruleID.Key].Help}");
 
                         // add it to the excel issue list only if it failed.
                         if (criteriaString.Equals(ResourceHelper.GetString("CriteriaFail")))
@@ -232,6 +232,7 @@ namespace AxeAccessibilityDriver
             int criteriaColumn = int.Parse(ResourceHelper.GetString("CriteriaColumn"));
             int commentColumn = int.Parse(ResourceHelper.GetString("CommentColumn"));
 
+            // representation of one row.
             List<string> row = new List<string>();
 
             // Add Criteria.
@@ -255,8 +256,11 @@ namespace AxeAccessibilityDriver
                     }
                     else
                     {
-                        // if the row is already a fail, add more comments to it.
-                        excelReport.ExcelData[rowName][commentColumn] += $"\r\n{row[commentColumn]}";
+                        // if the row is already a fail, add more comments to it only if the same comment does not exist already.
+                        if (!excelReport.ExcelData[rowName][commentColumn].Contains(row[commentColumn]))
+                        {
+                            excelReport.ExcelData[rowName][commentColumn] += $"\r\n{row[commentColumn]}";
+                        }
                     }
                 }
                 else
