@@ -227,10 +227,10 @@ namespace AxeAccessibilityDriver
             hidden.IsHidden = true;
 
             ICellStyle style = workbook.CreateCellStyle();
-            style.BorderBottom = BorderStyle.Medium;
-            style.BorderLeft = BorderStyle.Medium;
-            style.BorderTop = BorderStyle.Medium;
-            style.BorderRight = BorderStyle.Medium;
+            style.BorderBottom = BorderStyle.Thin;
+            style.BorderLeft = BorderStyle.Thin;
+            style.BorderTop = BorderStyle.Thin;
+            style.BorderRight = BorderStyle.Thin;
             style.SetFont(font);
 
             // set the date
