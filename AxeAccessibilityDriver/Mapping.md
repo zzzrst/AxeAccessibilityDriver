@@ -4,7 +4,7 @@
 | ------------- |---------------|
 | Pass          | Pass          |
 | Violation     | Fail          | 
-| Incomplete    |       |
+| Incomplete    | Incomplete    |
 | Inapplicable    | Criteria not applicable      |
 
 ## WATR Report Issue Sheet
