@@ -137,7 +137,7 @@
     <value>Pass</value>
     <comment>The word for pass in the excel document</comment>
   </data>
-  <data name="Incomplete" xml:space="preserve">
+  <data name="Inapplicable" xml:space="preserve">
     <value>CriteriaNA</value>
     <comment>What does incomplete mean from the AODA report</comment>
   </data>

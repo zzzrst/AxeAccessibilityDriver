@@ -108,9 +108,9 @@ namespace AxeAccessibilityDriver.Properties {
         /// <summary>
         ///   Looks up a localized string similar to CriteriaNA.
         /// </summary>
-        internal static string Incomplete {
+        internal static string Inapplicable {
             get {
-                return ResourceManager.GetString("Incomplete", resourceCulture);
+                return ResourceManager.GetString("Inapplicable", resourceCulture);
             }
         }
         
