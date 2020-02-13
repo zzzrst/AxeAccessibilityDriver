@@ -106,10 +106,6 @@ namespace AxeAccessibilityDriver
 
             this.DefineColourFormattingChecklistSheet(sheet);
 
-            // Define styles
-            ICellStyle commentStyle = workbook.CreateCellStyle();
-            commentStyle.WrapText = true;
-
             foreach (string key in this.ExcelData.Keys)
             {
                 int rowId = this.FindIdWithValue(key, sheet);
@@ -119,21 +115,7 @@ namespace AxeAccessibilityDriver
                 {
                     foreach (string col in this.ExcelData[key])
                     {
-                        // if this is the comment column
-                        if (colIndex == 3 + int.Parse(ResourceHelper.GetString("CommentColumn")))
-                        {
-                            // only put comments on rows that fail.
-                            if (this.ExcelData[key][int.Parse(ResourceHelper.GetString("CriteriaColumn"))].Equals("Fail"))
-                            {
-                                sheet.GetRow(rowId).GetCell(colIndex).CellStyle = commentStyle;
-                                sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
-                            }
-                        }
-                        else
-                        {
-                            sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
-                        }
-
+                        sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
                         colIndex++;
                     }
                 }
@@ -220,7 +202,7 @@ namespace AxeAccessibilityDriver
 
             this.DefineColourFormattingIssueSheet(sheet);
 
-            var font = workbook.CreateFont();
+            IFont font = workbook.CreateFont();
             font.FontHeightInPoints = 12;
 
             ICellStyle hidden = workbook.CreateCellStyle();
