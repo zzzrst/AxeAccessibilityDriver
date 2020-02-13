@@ -304,8 +304,6 @@ namespace AxeAccessibilityDriver
 
         private int FindIdWithValue(string key, ISheet sheet)
         {
-            Console.WriteLine("_______");
-            Console.WriteLine(key);
             int id = -1;
             for (int rowIndex = 12; rowIndex < 56; rowIndex++)
             {
