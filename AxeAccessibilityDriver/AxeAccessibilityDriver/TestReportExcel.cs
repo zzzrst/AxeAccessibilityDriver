@@ -117,13 +117,16 @@ namespace AxeAccessibilityDriver
                     {
                         if (colIndex == 3 + int.Parse(ResourceHelper.GetString("CommentColumn")))
                         {
-                            sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
+                            // only put comments on rows that fail.
+                            if (this.ExcelData[key][int.Parse(ResourceHelper.GetString("CriteriaColumn"))].Equals("Fail"))
+                            {
+                                sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
+                            }
                         }
                         else
                         {
                             sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
                         }
-
                         colIndex++;
                     }
                 }
