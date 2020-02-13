@@ -88,6 +88,15 @@ namespace AxeAccessibilityDriver.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Incomplete.
+        /// </summary>
+        internal static string CriteriaIncomplete {
+            get {
+                return ResourceManager.GetString("CriteriaIncomplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Criteria not applicable.
         /// </summary>
         internal static string CriteriaNA {
@@ -111,6 +120,15 @@ namespace AxeAccessibilityDriver.Properties {
         internal static string Inapplicable {
             get {
                 return ResourceManager.GetString("Inapplicable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CriteriaIncomplete.
+        /// </summary>
+        internal static string Incomplete {
+            get {
+                return ResourceManager.GetString("Incomplete", resourceCulture);
             }
         }
         

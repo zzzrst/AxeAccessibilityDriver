@@ -129,6 +129,9 @@
     <value>Fail</value>
     <comment>The word for fail in the excel document</comment>
   </data>
+  <data name="CriteriaIncomplete" xml:space="preserve">
+    <value>Incomplete</value>
+  </data>
   <data name="CriteriaNA" xml:space="preserve">
     <value>Criteria not applicable</value>
     <comment>The word for not applicable in the excel document</comment>
@@ -140,6 +143,9 @@
   <data name="Inapplicable" xml:space="preserve">
     <value>CriteriaNA</value>
     <comment>What does incomplete mean from the AODA report</comment>
+  </data>
+  <data name="Incomplete" xml:space="preserve">
+    <value>CriteriaIncomplete</value>
   </data>
   <data name="IssueKeycritical" xml:space="preserve">
     <value>High</value>
