@@ -177,12 +177,14 @@ namespace AxeAccessibilityDriver
             fillYellow2.FillBackgroundColor = IndexedColors.LightYellow.Index;
             fillYellow2.FillPattern = FillPattern.SolidForeground;
 
+            // this is in the 'Meets Criteria' Column
             CellRangeAddress[] cfRange =
             {
                 CellRangeAddress.ValueOf("D13:D26"), CellRangeAddress.ValueOf("D29:D40"),
                 CellRangeAddress.ValueOf("D43:D52"), CellRangeAddress.ValueOf("D55:D56"),
             };
 
+            // You can't add 4 at once
             sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfGreen, cfYellow2, });
             sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfYellow });
 
@@ -207,6 +209,10 @@ namespace AxeAccessibilityDriver
                 new XSSFConditionalFormattingRule[] { cfRed, cfGreen, cfYellow });
         }
 
+        /// <summary>
+        /// Updates the issue sheet.
+        /// </summary>
+        /// <param name="workbook">The workbook containing the issue sheet.</param>
         private void UpdateIssueSheet(IWorkbook workbook)
         {
             // get the checklist sheet to modify.
@@ -267,6 +273,10 @@ namespace AxeAccessibilityDriver
             }
         }
 
+        /// <summary>
+        /// Defines the conditional formatting for the issue sheet.
+        /// </summary>
+        /// <param name="sheet">the issue sheet.</param>
         private void DefineColourFormattingIssueSheet(ISheet sheet)
         {
             // Define formatting.
@@ -293,15 +303,21 @@ namespace AxeAccessibilityDriver
             fillYellow.FillBackgroundColor = IndexedColors.LightYellow.Index;
             fillYellow.FillPattern = FillPattern.SolidForeground;
 
+            // this is in the row for impact
             CellRangeAddress[] cfRange =
             {
                 CellRangeAddress.ValueOf($"F4:F{4 + this.IssueList.Count}"),
             };
 
             sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfOrange, cfYellow });
-
         }
 
+        /// <summary>
+        /// In the Checklist sheet, it finds the row index who's Criteria id is equal to the key.
+        /// </summary>
+        /// <param name="key">the id to find.</param>
+        /// <param name="sheet">Checklist Sheet.</param>
+        /// <returns>The row index.</returns>
         private int FindIdWithValue(string key, ISheet sheet)
         {
             int id = -1;

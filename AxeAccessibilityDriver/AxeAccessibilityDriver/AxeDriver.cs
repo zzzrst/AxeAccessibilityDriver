@@ -16,7 +16,7 @@ namespace AxeAccessibilityDriver
     /// <summary>
     /// This is the driver to deal with Axe.core.
     /// </summary>
-    public class AxeDriver
+    public class AxeDriver : IAccessibilityChecker
     {
         private const string TALLIEDRESULT = "TalliedResult.csv";
         private const string RULEPAGESUMMARY = "RulePageSummary.csv";

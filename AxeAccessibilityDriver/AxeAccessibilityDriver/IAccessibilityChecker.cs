@@ -15,15 +15,11 @@ namespace AxeAccessibilityDriver
     public interface IAccessibilityChecker
     {
         /// <summary>
-        /// Gets or sets the webdriver variable.
-        /// </summary>
-        public IWebDriver WebDriver { get; set; }
-
-        /// <summary>
         /// This captures the AODA result for this webpage.
         /// </summary>
+        /// <param name="driver">The driver to use.</param>
         /// <param name="providedPageTitle"> Title of the page. </param>
-        public void CaptureResults(string providedPageTitle);
+        public void CaptureResult(IWebDriver driver, string providedPageTitle);
 
         /// <summary>
         /// Logs the result for this file.
@@ -31,5 +27,4 @@ namespace AxeAccessibilityDriver
         /// <param name="folderLocation">Location to save all the results.</param>
         public void LogResults(string folderLocation);
     }
-
 }
