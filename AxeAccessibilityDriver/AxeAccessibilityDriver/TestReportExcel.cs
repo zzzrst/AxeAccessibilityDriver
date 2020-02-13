@@ -265,10 +265,6 @@ namespace AxeAccessibilityDriver
                 row.GetCell(6).SetCellValue("Current");
                 row.GetCell(7).SetCellValue("To be Determined");
             }
-
-            // Hide all the rows after
-            // sheet.GroupRow(this.IssueList.Count + 3, sheet.LastRowNum);
-            // sheet.SetRowGroupCollapsed(this.IssueList.Count + 3, true);
         }
 
         private void DefineColourFormattingIssueSheet(ISheet sheet)
