@@ -220,8 +220,18 @@ namespace AxeAccessibilityDriver
 
             this.DefineColourFormattingIssueSheet(sheet);
 
+            var font = workbook.CreateFont();
+            font.FontHeightInPoints = 12;
+
             ICellStyle hidden = workbook.CreateCellStyle();
             hidden.IsHidden = true;
+
+            ICellStyle style = workbook.CreateCellStyle();
+            style.BorderBottom = BorderStyle.Medium;
+            style.BorderLeft = BorderStyle.Medium;
+            style.BorderTop = BorderStyle.Medium;
+            style.BorderRight = BorderStyle.Medium;
+            style.SetFont(font);
 
             // set the date
             string date = DateTime.Now.ToString("yyyy/MMMM/dd");
@@ -243,7 +253,7 @@ namespace AxeAccessibilityDriver
                 row = sheet.CreateRow(3 + x);
                 for (int r = 0; r < 8; r++)
                 {
-                    row.CreateCell(r);
+                    row.CreateCell(r).CellStyle = style;
                 }
 
                 row.GetCell(0).SetCellValue(x + 1);
@@ -263,8 +273,8 @@ namespace AxeAccessibilityDriver
             }
 
             // Hide all the rows after
-            sheet.GroupRow(this.IssueList.Count + 3, sheet.LastRowNum);
-            sheet.SetRowGroupCollapsed(this.IssueList.Count + 3, true);
+            // sheet.GroupRow(this.IssueList.Count + 3, sheet.LastRowNum);
+            // sheet.SetRowGroupCollapsed(this.IssueList.Count + 3, true);
         }
 
         private void DefineColourFormattingIssueSheet(ISheet sheet)
