@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SeleniumPerfXML.Properties {
+namespace AxeAccessibilityDriver.Properties {
     using System;
     
     
