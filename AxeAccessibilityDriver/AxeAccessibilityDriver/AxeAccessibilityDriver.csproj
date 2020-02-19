@@ -1,8 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Run Axe for accessibilty scan
+Output results into json, csv and WATR report</Description>
+    <RepositoryUrl>https://github.com/zzzrst/AxeAccessibilityDriver</RepositoryUrl>
+    <ApplicationIcon />
+    <StartupObject />
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <NeutralLanguage>aa-ER</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
