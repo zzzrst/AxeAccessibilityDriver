@@ -19,12 +19,12 @@ namespace AxeAccessibilityDriver
         /// </summary>
         /// <param name="driver">The driver to use.</param>
         /// <param name="providedPageTitle"> Title of the page. </param>
-        public void CaptureResult(IWebDriver driver, string providedPageTitle);
+        void CaptureResult(IWebDriver driver, string providedPageTitle);
 
         /// <summary>
         /// Logs the result for this file.
         /// </summary>
         /// <param name="folderLocation">Location to save all the results.</param>
-        public void LogResults(string folderLocation);
+        void LogResults(string folderLocation);
     }
 }
