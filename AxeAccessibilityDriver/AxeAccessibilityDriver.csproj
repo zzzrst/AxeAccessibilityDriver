@@ -11,9 +11,25 @@ Output results into json, csv and WATR report</Description>
     <StartupObject />
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
-    <NeutralLanguage>af-NA</NeutralLanguage>
-    <Version>1.0.2</Version>
+    <NeutralLanguage></NeutralLanguage>
+    <Version>1.0.4</Version>
+    <PackageId />
+    <Authors />
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\GitHubProjects\AxeAccessibilityDriver\AxeAccessibilityDriver\AxeAccessibilityDriver\AxeAccessibilityDriver.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AxeAccessibilityDriver\**" />
+    <Compile Remove="AxeTester\**" />
+    <EmbeddedResource Remove="AxeAccessibilityDriver\**" />
+    <EmbeddedResource Remove="AxeTester\**" />
+    <None Remove="AxeAccessibilityDriver\**" />
+    <None Remove="AxeTester\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="NPOI" Version="2.4.1" />
@@ -40,7 +56,7 @@ Output results into json, csv and WATR report</Description>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="WATR_Template.xlsx">
+    <None Include="WATR_Template.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
