@@ -111,8 +111,8 @@ namespace AxeAccessibilityDriver
         {
             // get the summary sheet to modify.
             ISheet sheet = workbook.GetSheet(ResourceHelper.GetString("SheetSummary"));
-            double progress = ((38 - this.criteriaFailed) / 38) * 100;
-            sheet.GetRow(28).GetCell(0).SetCellValue(Math.Floor(progress));
+            int progress = (int)Math.Round((38.0d - this.criteriaFailed) / 38.0d * 100);
+            sheet.GetRow(28).GetCell(0).SetCellValue(progress.ToString() + "%");
         }
 
         private void UpdateChecklistSheet(IWorkbook workbook)
