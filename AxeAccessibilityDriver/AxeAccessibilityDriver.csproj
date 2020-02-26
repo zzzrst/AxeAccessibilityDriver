@@ -12,7 +12,7 @@ Output results into json, csv and WATR report</Description>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
     <NeutralLanguage></NeutralLanguage>
-    <Version>1.0.4</Version>
+    <Version>1.0.6</Version>
     <PackageId />
     <Authors />
     <RepositoryType>git</RepositoryType>
@@ -20,6 +20,10 @@ Output results into json, csv and WATR report</Description>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\GitHubProjects\AxeAccessibilityDriver\AxeAccessibilityDriver\AxeAccessibilityDriver\AxeAccessibilityDriver.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\DUONGCH\Projects\AxeAccessibilityDriver\AxeAccessibilityDriver\AxeAccessibilityDriver.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -327,6 +327,11 @@
             The not applicable value.
             </summary>
         </member>
+        <member name="F:AxeAccessibilityDriver.TestReportExcel.criteriaFailed">
+            <summary>
+            The number of critera Failed.
+            </summary>
+        </member>
         <member name="M:AxeAccessibilityDriver.TestReportExcel.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:AxeAccessibilityDriver.TestReportExcel"/> class.
