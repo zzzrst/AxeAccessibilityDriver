@@ -171,6 +171,10 @@
     <value>Issue Tracking Log</value>
     <comment>The sheet with the issue log</comment>
   </data>
+  <data name="SheetSummary" xml:space="preserve">
+    <value>Executive Summary</value>
+    <comment>The sheet with the summary</comment>
+  </data>
   <data name="Violations" xml:space="preserve">
     <value>CriteriaFail</value>
     <comment>What does Violations mean from the AODA Report</comment>

@@ -34,6 +34,11 @@ namespace AxeAccessibilityDriver
         public const string NOTAPPLICABLEVALUE = "Criteria not applicable";
 
         /// <summary>
+        /// The number of critera Failed.
+        /// </summary>
+        private int criteriaFailed = 0;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TestReportExcel"/> class.
         /// Creates a new Excel report.
         /// </summary>
@@ -92,6 +97,7 @@ namespace AxeAccessibilityDriver
 
             this.UpdateChecklistSheet(workbook);
             this.UpdateIssueSheet(workbook);
+            this.UpdateSummarySheet(workbook);
 
             // write to output.
             using (FileStream fileStream = new FileStream(resultFilePath, FileMode.Create, FileAccess.Write))
@@ -99,6 +105,14 @@ namespace AxeAccessibilityDriver
                 workbook.Write(fileStream);
                 workbook.Close();
             }
+        }
+
+        private void UpdateSummarySheet(IWorkbook workbook)
+        {
+            // get the summary sheet to modify.
+            ISheet sheet = workbook.GetSheet(ResourceHelper.GetString("SheetSummary"));
+            double progress = ((38 - this.criteriaFailed) / 38) * 100;
+            sheet.GetRow(28).GetCell(0).SetCellValue(Math.Floor(progress));
         }
 
         private void UpdateChecklistSheet(IWorkbook workbook)
@@ -123,6 +137,7 @@ namespace AxeAccessibilityDriver
                             if (this.ExcelData[key][int.Parse(ResourceHelper.GetString("CriteriaColumn"))].Equals("Fail"))
                             {
                                 sheet.GetRow(rowId).GetCell(colIndex).SetCellValue(col);
+                                this.criteriaFailed++;
                             }
                         }
                         else
