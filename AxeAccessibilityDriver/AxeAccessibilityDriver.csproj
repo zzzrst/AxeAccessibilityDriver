@@ -12,7 +12,9 @@ Output results into json, csv and WATR report</Description>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
     <NeutralLanguage></NeutralLanguage>
-    <Version>1.0.6</Version>
+    <Build>$([System.DateTime]::op_Subtraction($([System.DateTime]::get_Now().get_Date()),$([System.DateTime]::new(2000,1,1))).get_TotalDays())</Build>
+    <Revision>$([MSBuild]::Divide($([System.DateTime]::get_Now().get_TimeOfDay().get_TotalSeconds()), 2).ToString('F0'))</Revision>
+    <Version>1.1.$(Build).$(Revision)</Version>
     <PackageId />
     <Authors />
     <RepositoryType>git</RepositoryType>
