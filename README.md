@@ -21,5 +21,5 @@ Takes in a Selenium WebDriver and analyzes according to AODA. It will generate i
 The currently used template is the WATR_Template.xlsx. The program will add information to the template as needed.
 ## Other notes
 Version number are labed as MAJOR.MINOR.dailyBuild.buildTime  
- Major changes are when new classes are added, except helper classes, or when a large change is made to the code such as a large functionality change.
- Minor changes are when methods are added/removed or a helper class is added.
+Major changes are when new classes are added, except helper classes, or when a large change is made to the code such as a large functionality change.  
+Minor changes are when methods are added/removed or a helper class is added.
