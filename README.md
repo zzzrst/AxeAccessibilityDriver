@@ -19,3 +19,5 @@ Takes in a Selenium WebDriver and analyzes according to AODA. It will generate i
 
 ## Templates
 The currently used template is the WATR_Template.xlsx. The program will add information to the template as needed.
+## Other notes
+Version number are labed as MAJOR.MINOR.dailyBuild.buildTime
