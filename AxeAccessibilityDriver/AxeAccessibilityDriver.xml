@@ -170,6 +170,31 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.CHECKLIST_DATE_CELL">
+            <summary>
+              Looks up a localized string similar to 2.
+            </summary>
+        </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.CHECKLIST_DATE_ROW">
+            <summary>
+              Looks up a localized string similar to 3.
+            </summary>
+        </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.CHECKLIST_START_COL">
+            <summary>
+              Looks up a localized string similar to 3.
+            </summary>
+        </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.CHECKLIST_TOTAL_CELL">
+            <summary>
+              Looks up a localized string similar to 3.
+            </summary>
+        </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.CHECKLIST_TOTAL_ROW">
+            <summary>
+              Looks up a localized string similar to 62.
+            </summary>
+        </member>
         <member name="P:AxeAccessibilityDriver.Properties.Resources.CommentColumn">
             <summary>
               Looks up a localized string similar to 1.
@@ -210,6 +235,11 @@
               Looks up a localized string similar to CriteriaIncomplete.
             </summary>
         </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.ISSUE_HIDDEN_CRITERA_NAME_CELL">
+            <summary>
+              Looks up a localized string similar to 14.
+            </summary>
+        </member>
         <member name="P:AxeAccessibilityDriver.Properties.Resources.IssueKeycritical">
             <summary>
               Looks up a localized string similar to High.
@@ -238,6 +268,36 @@
         <member name="P:AxeAccessibilityDriver.Properties.Resources.SheetIssueLog">
             <summary>
               Looks up a localized string similar to Issue Tracking Log.
+            </summary>
+        </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.SheetSummary">
+            <summary>
+              Looks up a localized string similar to Executive Summary.
+            </summary>
+        </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.SUMMARY_DATE_CELL">
+            <summary>
+              Looks up a localized string similar to 0.
+            </summary>
+        </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.SUMMARY_DATE_ROW">
+            <summary>
+              Looks up a localized string similar to 9.
+            </summary>
+        </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.SUMMARY_PROGRESS_CELL">
+            <summary>
+              Looks up a localized string similar to 0.
+            </summary>
+        </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.SUMMARY_PROGRESS_ROW">
+            <summary>
+              Looks up a localized string similar to 28.
+            </summary>
+        </member>
+        <member name="P:AxeAccessibilityDriver.Properties.Resources.TOTAL_CRITERIA">
+            <summary>
+              Looks up a localized string similar to 38.
             </summary>
         </member>
         <member name="P:AxeAccessibilityDriver.Properties.Resources.Violations">
@@ -310,21 +370,6 @@
         <member name="T:AxeAccessibilityDriver.TestReportExcel">
             <summary>
             The excel test reporter object.
-            </summary>
-        </member>
-        <member name="F:AxeAccessibilityDriver.TestReportExcel.PASSVALUE">
-            <summary>
-            The value for pass in the excel document.
-            </summary>
-        </member>
-        <member name="F:AxeAccessibilityDriver.TestReportExcel.FAILVALUE">
-            <summary>
-            The value for fail in the excel doucment.
-            </summary>
-        </member>
-        <member name="F:AxeAccessibilityDriver.TestReportExcel.NOTAPPLICABLEVALUE">
-            <summary>
-            The not applicable value.
             </summary>
         </member>
         <member name="F:AxeAccessibilityDriver.TestReportExcel.criteriaFailed">
