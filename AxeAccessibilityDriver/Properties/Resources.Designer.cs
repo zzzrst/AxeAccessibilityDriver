@@ -297,15 +297,6 @@ namespace AxeAccessibilityDriver.Properties {
         /// <summary>
         ///   Looks up a localized string similar to CriteriaFail.
         /// </summary>
-        internal static string SheetSummary {
-            get {
-                return ResourceManager.GetString("SheetSummary", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CriteriaFail.
-        /// </summary>
         internal static string Violations {
             get {
                 return ResourceManager.GetString("Violations", resourceCulture);
