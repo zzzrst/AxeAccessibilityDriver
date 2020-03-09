@@ -62,9 +62,9 @@ Output results into json, csv and WATR report</Description>
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="WATR_Template.xlsx">
+    <None Include="WATR_Template.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
 
 </Project>
