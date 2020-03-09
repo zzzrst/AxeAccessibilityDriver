@@ -302,15 +302,5 @@ namespace AxeAccessibilityDriver.Properties {
                 return ResourceManager.GetString("Violations", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] WATR_Template {
-            get {
-                object obj = ResourceManager.GetObject("WATR_Template", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }

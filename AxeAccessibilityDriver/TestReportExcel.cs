@@ -71,7 +71,6 @@ namespace AxeAccessibilityDriver
             IWorkbook workbook = null;
 
             string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\WATR_Template.xlsx";
-            File.WriteAllBytes(filePath, Properties.Resources.WATR_Template);
 
             string resultFilePath = this.FileLocation;
 
