@@ -19,21 +19,6 @@ namespace AxeAccessibilityDriver
     public class TestReportExcel
     {
         /// <summary>
-        /// The value for pass in the excel document.
-        /// </summary>
-        public const string PASSVALUE = "Pass";
-
-        /// <summary>
-        /// The value for fail in the excel doucment.
-        /// </summary>
-        public const string FAILVALUE = "Fail";
-
-        /// <summary>
-        /// The not applicable value.
-        /// </summary>
-        public const string NOTAPPLICABLEVALUE = "Criteria not applicable";
-
-        /// <summary>
         /// The number of critera Failed.
         /// </summary>
         private int criteriaFailed = 0;
@@ -108,14 +93,29 @@ namespace AxeAccessibilityDriver
 
         private void UpdateSummarySheet(IWorkbook workbook)
         {
+            double totalCriterias = double.Parse(ResourceHelper.GetString("TOTAL_CRITERIA"));
+            int progressRow = int.Parse(ResourceHelper.GetString("SUMMARY_PROGRESS_ROW"));
+            int progressCell = int.Parse(ResourceHelper.GetString("SUMMARY_PROGRESS_CELL"));
+
             // get the summary sheet to modify.
             ISheet sheet = workbook.GetSheet(ResourceHelper.GetString("SheetSummary"));
-            int progress = (int)Math.Round((38.0d - this.criteriaFailed) / 38.0d * 100);
-            sheet.GetRow(28).GetCell(0).SetCellValue(progress.ToString() + "%");
+
+            // Set the progress
+            int progress = (int)Math.Round((totalCriterias - this.criteriaFailed) / totalCriterias * 100);
+            sheet.GetRow(progressRow).GetCell(progressCell).SetCellValue(progress.ToString() + "%");
+
+            // upadate the date
+            // set the date
+            int dateRow = int.Parse(ResourceHelper.GetString("SUMMARY_DATE_ROW"));
+            int dateCell = int.Parse(ResourceHelper.GetString("SUMMARY_DATE_CELL"));
+            string date = $"This evaluation was carried out on {DateTime.Now.ToString("F")}.";
+            sheet.GetRow(dateRow).GetCell(dateCell).SetCellValue(date);
         }
 
         private void UpdateChecklistSheet(IWorkbook workbook)
         {
+            int startCol = int.Parse(ResourceHelper.GetString("CHECKLIST_START_COL"));
+
             // get the checklist sheet to modify.
             ISheet sheet = workbook.GetSheet(ResourceHelper.GetString("SheetCheckList"));
 
@@ -124,13 +124,13 @@ namespace AxeAccessibilityDriver
             foreach (string key in this.ExcelData.Keys)
             {
                 int rowId = this.FindIdWithValue(key, sheet);
-                int colIndex = 3;
+                int colIndex = startCol;
 
                 if (rowId >= 0)
                 {
                     foreach (string col in this.ExcelData[key])
                     {
-                        if (colIndex == 3 + int.Parse(ResourceHelper.GetString("CommentColumn")))
+                        if (colIndex == startCol + int.Parse(ResourceHelper.GetString("CommentColumn")))
                         {
                             // only put comments on rows that fail.
                             if (this.ExcelData[key][int.Parse(ResourceHelper.GetString("CriteriaColumn"))].Equals("Fail"))
@@ -150,10 +150,14 @@ namespace AxeAccessibilityDriver
             }
 
             // update the total
-            workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateFormulaCell(sheet.GetRow(62).GetCell(3));
+            int totalRow = int.Parse(ResourceHelper.GetString("CHECKLIST_TOTAL_ROW"));
+            int totalCell = int.Parse(ResourceHelper.GetString("CHECKLIST_TOTAL_CELL"));
+            workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateFormulaCell(sheet.GetRow(totalRow).GetCell(totalCell));
 
             // set the date
-            sheet.GetRow(3).GetCell(2).SetCellValue(DateTime.Now.ToString());
+            int dateRow = int.Parse(ResourceHelper.GetString("CHECKLIST_DATE_ROW"));
+            int dateCell = int.Parse(ResourceHelper.GetString("CHECKLIST_DATE_CELL"));
+            sheet.GetRow(dateRow).GetCell(dateCell).SetCellValue(DateTime.Now.ToString());
         }
 
         /// <summary>
@@ -254,9 +258,11 @@ namespace AxeAccessibilityDriver
 
             // get all the criterion options.
             List<string> criterionOptions = new List<string>();
-            for (int i = 1; i < 38; i++)
+            int totalCriteria = int.Parse(ResourceHelper.GetString("TOTAL_CRITERIA"));
+            int hiddenCell = int.Parse(ResourceHelper.GetString("ISSUE_HIDDEN_CRITERA_NAME_CELL"));
+            for (int i = 1; i < totalCriteria; i++)
             {
-                criterionOptions.Add(sheet.GetRow(i).GetCell(14).ToString());
+                criterionOptions.Add(sheet.GetRow(i).GetCell(hiddenCell).ToString());
             }
 
             // print out all the issues
@@ -265,7 +271,7 @@ namespace AxeAccessibilityDriver
                 IssueLog issueLog = this.IssueList[x];
                 IRow row;
 
-                // create a new row.
+                // create a new row. skips the first 3 rows
                 row = sheet.CreateRow(3 + x);
                 for (int r = 0; r < 8; r++)
                 {

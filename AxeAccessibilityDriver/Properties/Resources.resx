@@ -117,6 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CHECKLIST_DATE_CELL" xml:space="preserve">
+    <value>2</value>
+    <comment>The cell where the date is located in the checklist sheet</comment>
+  </data>
+  <data name="CHECKLIST_DATE_ROW" xml:space="preserve">
+    <value>3</value>
+    <comment>The row where the date is located in the checklist sheet</comment>
+  </data>
+  <data name="CHECKLIST_START_COL" xml:space="preserve">
+    <value>3</value>
+    <comment>The col to start modifying in the checklist sheet</comment>
+  </data>
+  <data name="CHECKLIST_TOTAL_CELL" xml:space="preserve">
+    <value>3</value>
+    <comment>The cell where the total is located in the checklist sheet</comment>
+  </data>
+  <data name="CHECKLIST_TOTAL_ROW" xml:space="preserve">
+    <value>62</value>
+    <comment>The row where the total is located in the checklist sheet</comment>
+  </data>
   <data name="CommentColumn" xml:space="preserve">
     <value>1</value>
     <comment>The column index of the comments</comment>
@@ -159,6 +179,10 @@
     <value>Medium</value>
     <comment>Maps the serious issue to whatever serious is for Excel document</comment>
   </data>
+  <data name="ISSUE_HIDDEN_CRITERA_NAME_CELL" xml:space="preserve">
+    <value>14</value>
+    <comment>The hidden cell where the list of criteria names are hidden in the issue sheet.</comment>
+  </data>
   <data name="Pass" xml:space="preserve">
     <value>CriteriaPass</value>
     <comment>What does Pass mean from the AODA report</comment>
@@ -174,6 +198,26 @@
   <data name="SheetSummary" xml:space="preserve">
     <value>Executive Summary</value>
     <comment>The sheet with the summary</comment>
+  </data>
+  <data name="SUMMARY_DATE_CELL" xml:space="preserve">
+    <value>0</value>
+    <comment>the cell where the date is located on the summary sheet</comment>
+  </data>
+  <data name="SUMMARY_DATE_ROW" xml:space="preserve">
+    <value>9</value>
+    <comment>the row where the date is located on the summary sheet</comment>
+  </data>
+  <data name="SUMMARY_PROGRESS_CELL" xml:space="preserve">
+    <value>0</value>
+    <comment>Cell of where to put the progress in the summary sheet</comment>
+  </data>
+  <data name="SUMMARY_PROGRESS_ROW" xml:space="preserve">
+    <value>28</value>
+    <comment>Row where to put the progress in the summary sheet</comment>
+  </data>
+  <data name="TOTAL_CRITERIA" xml:space="preserve">
+    <value>38</value>
+    <comment>Total number of criterias</comment>
   </data>
   <data name="Violations" xml:space="preserve">
     <value>CriteriaFail</value>

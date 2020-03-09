@@ -61,6 +61,51 @@ namespace AxeAccessibilityDriver.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string CHECKLIST_DATE_CELL {
+            get {
+                return ResourceManager.GetString("CHECKLIST_DATE_CELL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string CHECKLIST_DATE_ROW {
+            get {
+                return ResourceManager.GetString("CHECKLIST_DATE_ROW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string CHECKLIST_START_COL {
+            get {
+                return ResourceManager.GetString("CHECKLIST_START_COL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string CHECKLIST_TOTAL_CELL {
+            get {
+                return ResourceManager.GetString("CHECKLIST_TOTAL_CELL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 62.
+        /// </summary>
+        internal static string CHECKLIST_TOTAL_ROW {
+            get {
+                return ResourceManager.GetString("CHECKLIST_TOTAL_ROW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1.
         /// </summary>
         internal static string CommentColumn {
@@ -133,6 +178,15 @@ namespace AxeAccessibilityDriver.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 14.
+        /// </summary>
+        internal static string ISSUE_HIDDEN_CRITERA_NAME_CELL {
+            get {
+                return ResourceManager.GetString("ISSUE_HIDDEN_CRITERA_NAME_CELL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to High.
         /// </summary>
         internal static string IssueKeycritical {
@@ -188,6 +242,60 @@ namespace AxeAccessibilityDriver.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Executive Summary.
+        /// </summary>
+        internal static string SheetSummary {
+            get {
+                return ResourceManager.GetString("SheetSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        internal static string SUMMARY_DATE_CELL {
+            get {
+                return ResourceManager.GetString("SUMMARY_DATE_CELL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9.
+        /// </summary>
+        internal static string SUMMARY_DATE_ROW {
+            get {
+                return ResourceManager.GetString("SUMMARY_DATE_ROW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        internal static string SUMMARY_PROGRESS_CELL {
+            get {
+                return ResourceManager.GetString("SUMMARY_PROGRESS_CELL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 28.
+        /// </summary>
+        internal static string SUMMARY_PROGRESS_ROW {
+            get {
+                return ResourceManager.GetString("SUMMARY_PROGRESS_ROW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 38.
+        /// </summary>
+        internal static string TOTAL_CRITERIA {
+            get {
+                return ResourceManager.GetString("TOTAL_CRITERIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CriteriaFail.
         /// </summary>
         internal static string SheetSummary {
             get {
