@@ -156,6 +156,10 @@
     <value>Criteria not applicable</value>
     <comment>The word for not applicable in the excel document</comment>
   </data>
+  <data name="CriteriaNeedManual" xml:space="preserve">
+    <value>Requires Manual Testing</value>
+    <comment>The word for 'need manual testing' in the excel sheet.</comment>
+  </data>
   <data name="CriteriaPass" xml:space="preserve">
     <value>Pass</value>
     <comment>The word for pass in the excel document</comment>

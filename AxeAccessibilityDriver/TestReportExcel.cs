@@ -197,6 +197,13 @@ namespace AxeAccessibilityDriver
             fillYellow2.FillBackgroundColor = IndexedColors.LightYellow.Index;
             fillYellow2.FillPattern = FillPattern.SolidForeground;
 
+            // Fill blue if need manual testing
+            XSSFConditionalFormattingRule cfBlue =
+                (XSSFConditionalFormattingRule)sCF.CreateConditionalFormattingRule(ComparisonOperator.Equal, $"\"{ResourceHelper.GetString("CriteriaNeedManual")}\"");
+            XSSFPatternFormatting fillBlue = (XSSFPatternFormatting)cfBlue.CreatePatternFormatting();
+            fillBlue.FillBackgroundColor = IndexedColors.Aqua.Index;
+            fillBlue.FillPattern = FillPattern.SolidForeground;
+
             // this is in the 'Meets Criteria' Column
             CellRangeAddress[] cfRange =
             {
@@ -206,7 +213,7 @@ namespace AxeAccessibilityDriver
 
             // You can't add 4 at once
             sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfRed, cfGreen, cfYellow2, });
-            sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfYellow });
+            sCF.AddConditionalFormatting(cfRange, new XSSFConditionalFormattingRule[] { cfYellow, cfBlue });
 
             // fill in the success criteria score
 
