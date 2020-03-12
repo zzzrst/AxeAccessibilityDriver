@@ -151,6 +151,15 @@ namespace AxeAccessibilityDriver.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Requires Manual Testing.
+        /// </summary>
+        internal static string CriteriaNeedManual {
+            get {
+                return ResourceManager.GetString("CriteriaNeedManual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pass.
         /// </summary>
         internal static string CriteriaPass {
