@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace AutomationTestingProgram
+namespace AxeAccessibilityDriver
 {
     using System;
     using System.IO;

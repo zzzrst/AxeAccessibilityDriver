@@ -5,30 +5,6 @@
   "files": [
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/AutomationTestingProgram.Logger.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AutomationTestingProgram.Logger.html",
-          "hash": "PU5I+jgZQzGbKmStKZf7Mg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AutomationTestingProgram.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AutomationTestingProgram.html",
-          "hash": "WYW/8ylWujMvaUrXTI8quw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/AxeAccessibilityDriver.AxeDriver.yml",
       "output": {
         ".html": {
@@ -70,6 +46,18 @@
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.IssueLog.html",
           "hash": "jWWtvT236zU3WncUZvOR+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.Logger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.Logger.html",
+          "hash": "LHAzWlvwq3FvunbyUGmRCA=="
         }
       },
       "is_incremental": false,
@@ -141,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.html",
-          "hash": "kdDjES2phnB6scAPAVRUOw=="
+          "hash": "gMfQwTlgsTcenG1PIrTt8g=="
         }
       },
       "is_incremental": false,
@@ -153,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "mcsIPak4m+9cpDtsx7S33Q=="
+          "hash": "gFEk2ZxyXQuUOgJOzKjp9Q=="
         }
       },
       "is_incremental": false,
@@ -165,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "ZiV8tJidOeOXR1e0nxt3iA=="
+          "hash": "SEf2XuWRmjDY4wHMjTEuQg=="
         }
       },
       "is_incremental": false,
@@ -237,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "kXKWWn8qmQJhkveOYFZqNw=="
+          "hash": "k9S8EeUK0ClMm2wKp8F0cQ=="
         }
       },
       "is_incremental": false,
@@ -276,7 +264,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 12,
+          "total_file_count": 11,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
