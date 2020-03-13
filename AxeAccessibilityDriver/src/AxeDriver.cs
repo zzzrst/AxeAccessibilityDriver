@@ -8,6 +8,7 @@ namespace AxeAccessibilityDriver
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using Microsoft.Extensions.Logging;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using OpenQA.Selenium;
@@ -43,10 +44,33 @@ namespace AxeAccessibilityDriver
         private List<string> pageSummary;
 
         /// <summary>
+        /// Logger to use when logging.
+        /// </summary>
+        private ILogger logger;
+
+        /// <summary>
+        /// WebDriver to use.
+        /// </summary>
+        private IWebDriver driver;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AxeDriver"/> class.
         /// </summary>
-        public AxeDriver()
+        /// <param name="driver">driver to use.</param>
+        public AxeDriver(IWebDriver driver)
+            : this(driver, null)
         {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AxeDriver"/> class.
+        /// </summary>
+        /// <param name="driver">driver to use.</param>
+        /// <param name="logger">Logger to use.</param>
+        public AxeDriver(IWebDriver driver, ILogger logger)
+        {
+            this.logger = logger;
+            this.driver = driver;
             this.results = new Dictionary<string, Dictionary<string, Dictionary<string, HashSet<RuleNodeInformation>>>>();
             this.pageInfo = new Dictionary<string, PageInformation>();
             this.ruleInfo = new Dictionary<string, RuleInformation>();
@@ -59,12 +83,11 @@ namespace AxeAccessibilityDriver
         /// <summary>
         /// This captures the AODA result for this webpage.
         /// </summary>
-        /// <param name="driver">Selenium WebDriver used. </param>
         /// <param name="providedPageTitle"> Title of the page. </param>
-        public void CaptureResult(IWebDriver driver, string providedPageTitle)
+        public void CaptureResult(string providedPageTitle)
         {
-            driver.Manage().Window.FullScreen();
-            AxeResult results = driver.Analyze();
+            this.driver.Manage().Window.FullScreen();
+            AxeResult results = this.driver.Analyze();
 
             // check if there is any error. If there is, write it out
             Console.WriteLine(results.Error);
@@ -74,7 +97,7 @@ namespace AxeAccessibilityDriver
             {
                 this.pageInfo[results.Url] = new PageInformation()
                 {
-                    BrowserPageTitle = driver.Title,
+                    BrowserPageTitle = this.driver.Title,
                     ProvidedPageTitle = providedPageTitle,
                 };
             }
@@ -90,7 +113,7 @@ namespace AxeAccessibilityDriver
                 string.Format(
                     $"\"{results.Url}\"," +
                     $"\"{providedPageTitle}\"," +
-                    $"\"{driver.Title}\"," +
+                    $"\"{this.driver.Title}\"," +
                     $"\"{results.Passes.Count()}\"," +
                     $"\"{results.Violations.Count()}\"," +
                     $"\"{results.Incomplete.Count()}\"," +

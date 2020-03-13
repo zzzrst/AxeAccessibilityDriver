@@ -17,9 +17,8 @@ namespace AxeAccessibilityDriver
         /// <summary>
         /// This captures the AODA result for this webpage.
         /// </summary>
-        /// <param name="driver">The driver to use.</param>
         /// <param name="providedPageTitle"> Title of the page. </param>
-        void CaptureResult(IWebDriver driver, string providedPageTitle);
+        void CaptureResult(string providedPageTitle);
 
         /// <summary>
         /// Logs the result for this file.

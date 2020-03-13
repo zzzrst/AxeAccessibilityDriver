@@ -297,7 +297,7 @@ namespace AxeTester
         {
             try
             {
-                this.axeDriver.CaptureResult(this.webDriver, providedPageTitle);
+                this.axeDriver.CaptureResult(providedPageTitle);
             }
             catch (Exception e)
             {
@@ -530,7 +530,7 @@ namespace AxeTester
 
                 if (this.axeDriver == null)
                 {
-                    this.axeDriver = new AxeDriver();
+                    this.axeDriver = new AxeDriver(this.webDriver);
                 }
             }
             catch (Exception e)

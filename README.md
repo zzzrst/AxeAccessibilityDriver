@@ -9,7 +9,7 @@ Please take a few minutes to review the overview below before diving into the co
 Each Accessibility Implemntation must have the following two methods:
 
 ```c#
-    void CaptureResult(IWebDriver driver, string providedPageTitle);
+    void CaptureResult(string providedPageTitle);
 
     void LogResults(string folderLocation);
 ```
