@@ -103,12 +103,18 @@ references:
   commentId: T:AxeAccessibilityDriver.AxeDriver
   fullName: AxeAccessibilityDriver.AxeDriver
   nameWithType: AxeDriver
-- uid: AxeAccessibilityDriver.AxeDriver.#ctor
-  name: AxeDriver()
-  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver__ctor
-  commentId: M:AxeAccessibilityDriver.AxeDriver.#ctor
-  fullName: AxeAccessibilityDriver.AxeDriver.AxeDriver()
-  nameWithType: AxeDriver.AxeDriver()
+- uid: AxeAccessibilityDriver.AxeDriver.#ctor(OpenQA.Selenium.IWebDriver)
+  name: AxeDriver(IWebDriver)
+  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver__ctor_OpenQA_Selenium_IWebDriver_
+  commentId: M:AxeAccessibilityDriver.AxeDriver.#ctor(OpenQA.Selenium.IWebDriver)
+  fullName: AxeAccessibilityDriver.AxeDriver.AxeDriver(OpenQA.Selenium.IWebDriver)
+  nameWithType: AxeDriver.AxeDriver(IWebDriver)
+- uid: AxeAccessibilityDriver.AxeDriver.#ctor(OpenQA.Selenium.IWebDriver,Microsoft.Extensions.Logging.ILogger)
+  name: AxeDriver(IWebDriver, ILogger)
+  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver__ctor_OpenQA_Selenium_IWebDriver_Microsoft_Extensions_Logging_ILogger_
+  commentId: M:AxeAccessibilityDriver.AxeDriver.#ctor(OpenQA.Selenium.IWebDriver,Microsoft.Extensions.Logging.ILogger)
+  fullName: AxeAccessibilityDriver.AxeDriver.AxeDriver(OpenQA.Selenium.IWebDriver, Microsoft.Extensions.Logging.ILogger)
+  nameWithType: AxeDriver.AxeDriver(IWebDriver, ILogger)
 - uid: AxeAccessibilityDriver.AxeDriver.#ctor*
   name: AxeDriver
   href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver__ctor_
@@ -116,12 +122,12 @@ references:
   isSpec: "True"
   fullName: AxeAccessibilityDriver.AxeDriver.AxeDriver
   nameWithType: AxeDriver.AxeDriver
-- uid: AxeAccessibilityDriver.AxeDriver.CaptureResult(OpenQA.Selenium.IWebDriver,System.String)
-  name: CaptureResult(IWebDriver, String)
-  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver_CaptureResult_OpenQA_Selenium_IWebDriver_System_String_
-  commentId: M:AxeAccessibilityDriver.AxeDriver.CaptureResult(OpenQA.Selenium.IWebDriver,System.String)
-  fullName: AxeAccessibilityDriver.AxeDriver.CaptureResult(OpenQA.Selenium.IWebDriver, System.String)
-  nameWithType: AxeDriver.CaptureResult(IWebDriver, String)
+- uid: AxeAccessibilityDriver.AxeDriver.CaptureResult(System.String)
+  name: CaptureResult(String)
+  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver_CaptureResult_System_String_
+  commentId: M:AxeAccessibilityDriver.AxeDriver.CaptureResult(System.String)
+  fullName: AxeAccessibilityDriver.AxeDriver.CaptureResult(System.String)
+  nameWithType: AxeDriver.CaptureResult(String)
 - uid: AxeAccessibilityDriver.AxeDriver.CaptureResult*
   name: CaptureResult
   href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver_CaptureResult_
@@ -178,12 +184,12 @@ references:
   commentId: T:AxeAccessibilityDriver.IAccessibilityChecker
   fullName: AxeAccessibilityDriver.IAccessibilityChecker
   nameWithType: IAccessibilityChecker
-- uid: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(OpenQA.Selenium.IWebDriver,System.String)
-  name: CaptureResult(IWebDriver, String)
-  href: api/AxeAccessibilityDriver.IAccessibilityChecker.html#AxeAccessibilityDriver_IAccessibilityChecker_CaptureResult_OpenQA_Selenium_IWebDriver_System_String_
-  commentId: M:AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(OpenQA.Selenium.IWebDriver,System.String)
-  fullName: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(OpenQA.Selenium.IWebDriver, System.String)
-  nameWithType: IAccessibilityChecker.CaptureResult(IWebDriver, String)
+- uid: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(System.String)
+  name: CaptureResult(String)
+  href: api/AxeAccessibilityDriver.IAccessibilityChecker.html#AxeAccessibilityDriver_IAccessibilityChecker_CaptureResult_System_String_
+  commentId: M:AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(System.String)
+  fullName: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(System.String)
+  nameWithType: IAccessibilityChecker.CaptureResult(String)
 - uid: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult*
   name: CaptureResult
   href: api/AxeAccessibilityDriver.IAccessibilityChecker.html#AxeAccessibilityDriver_IAccessibilityChecker_CaptureResult_
