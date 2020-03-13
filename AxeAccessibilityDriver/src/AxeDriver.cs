@@ -86,8 +86,8 @@ namespace AxeAccessibilityDriver
         /// <param name="providedPageTitle"> Title of the page. </param>
         public void CaptureResult(string providedPageTitle)
         {
-            driver.Manage().Window.FullScreen();
-            AxeResult results = driver.Analyze();
+            this.driver.Manage().Window.FullScreen();
+            AxeResult results = this.driver.Analyze();
 
             // check if there is any error. If there is, write it out
             Console.WriteLine(results.Error);
@@ -97,7 +97,7 @@ namespace AxeAccessibilityDriver
             {
                 this.pageInfo[results.Url] = new PageInformation()
                 {
-                    BrowserPageTitle = driver.Title,
+                    BrowserPageTitle = this.driver.Title,
                     ProvidedPageTitle = providedPageTitle,
                 };
             }
@@ -113,7 +113,7 @@ namespace AxeAccessibilityDriver
                 string.Format(
                     $"\"{results.Url}\"," +
                     $"\"{providedPageTitle}\"," +
-                    $"\"{driver.Title}\"," +
+                    $"\"{this.driver.Title}\"," +
                     $"\"{results.Passes.Count()}\"," +
                     $"\"{results.Violations.Count()}\"," +
                     $"\"{results.Incomplete.Count()}\"," +
