@@ -3,7 +3,12 @@
 - The .Net Standard 2.0 Axe Driver implementation for Selenium. 
 - The .Net Core 2.2 Tester to run the Accessibility Driver.
 # Overview
-Please take a few minutes to review the overview below before diving into the code.  
+
+Please take a few minutes to review the overview below before diving into the code.
+## Documentation
+For api documentation, please refer to [here](https://zzzrst.github.io/AxeAccessibilityDriver/api/index.html).
+For examples of usages, please refer to the [article section](https://zzzrst.github.io/AxeAccessibilityDriver/articles/intro.html).
+
 ## Interfaces
 ### IAccessibilityChecker
 Each Accessibility Implemntation must have the following two methods:

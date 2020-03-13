@@ -1,96 +1,6 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: AutomationTestingProgram
-  name: AutomationTestingProgram
-  href: api/AutomationTestingProgram.html
-  commentId: N:AutomationTestingProgram
-  fullName: AutomationTestingProgram
-  nameWithType: AutomationTestingProgram
-- uid: AutomationTestingProgram.Logger
-  name: Logger
-  href: api/AutomationTestingProgram.Logger.html
-  commentId: T:AutomationTestingProgram.Logger
-  fullName: AutomationTestingProgram.Logger
-  nameWithType: Logger
-- uid: AutomationTestingProgram.Logger.Debug(System.Object)
-  name: Debug(Object)
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_Debug_System_Object_
-  commentId: M:AutomationTestingProgram.Logger.Debug(System.Object)
-  fullName: AutomationTestingProgram.Logger.Debug(System.Object)
-  nameWithType: Logger.Debug(Object)
-- uid: AutomationTestingProgram.Logger.Debug*
-  name: Debug
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_Debug_
-  commentId: Overload:AutomationTestingProgram.Logger.Debug
-  isSpec: "True"
-  fullName: AutomationTestingProgram.Logger.Debug
-  nameWithType: Logger.Debug
-- uid: AutomationTestingProgram.Logger.Error(System.Object)
-  name: Error(Object)
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_Error_System_Object_
-  commentId: M:AutomationTestingProgram.Logger.Error(System.Object)
-  fullName: AutomationTestingProgram.Logger.Error(System.Object)
-  nameWithType: Logger.Error(Object)
-- uid: AutomationTestingProgram.Logger.Error*
-  name: Error
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_Error_
-  commentId: Overload:AutomationTestingProgram.Logger.Error
-  isSpec: "True"
-  fullName: AutomationTestingProgram.Logger.Error
-  nameWithType: Logger.Error
-- uid: AutomationTestingProgram.Logger.Fatal(System.Object)
-  name: Fatal(Object)
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_Fatal_System_Object_
-  commentId: M:AutomationTestingProgram.Logger.Fatal(System.Object)
-  fullName: AutomationTestingProgram.Logger.Fatal(System.Object)
-  nameWithType: Logger.Fatal(Object)
-- uid: AutomationTestingProgram.Logger.Fatal*
-  name: Fatal
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_Fatal_
-  commentId: Overload:AutomationTestingProgram.Logger.Fatal
-  isSpec: "True"
-  fullName: AutomationTestingProgram.Logger.Fatal
-  nameWithType: Logger.Fatal
-- uid: AutomationTestingProgram.Logger.GetLog4NetLogger
-  name: GetLog4NetLogger()
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_GetLog4NetLogger
-  commentId: M:AutomationTestingProgram.Logger.GetLog4NetLogger
-  fullName: AutomationTestingProgram.Logger.GetLog4NetLogger()
-  nameWithType: Logger.GetLog4NetLogger()
-- uid: AutomationTestingProgram.Logger.GetLog4NetLogger*
-  name: GetLog4NetLogger
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_GetLog4NetLogger_
-  commentId: Overload:AutomationTestingProgram.Logger.GetLog4NetLogger
-  isSpec: "True"
-  fullName: AutomationTestingProgram.Logger.GetLog4NetLogger
-  nameWithType: Logger.GetLog4NetLogger
-- uid: AutomationTestingProgram.Logger.Info(System.Object)
-  name: Info(Object)
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_Info_System_Object_
-  commentId: M:AutomationTestingProgram.Logger.Info(System.Object)
-  fullName: AutomationTestingProgram.Logger.Info(System.Object)
-  nameWithType: Logger.Info(Object)
-- uid: AutomationTestingProgram.Logger.Info*
-  name: Info
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_Info_
-  commentId: Overload:AutomationTestingProgram.Logger.Info
-  isSpec: "True"
-  fullName: AutomationTestingProgram.Logger.Info
-  nameWithType: Logger.Info
-- uid: AutomationTestingProgram.Logger.Warn(System.Object)
-  name: Warn(Object)
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_Warn_System_Object_
-  commentId: M:AutomationTestingProgram.Logger.Warn(System.Object)
-  fullName: AutomationTestingProgram.Logger.Warn(System.Object)
-  nameWithType: Logger.Warn(Object)
-- uid: AutomationTestingProgram.Logger.Warn*
-  name: Warn
-  href: api/AutomationTestingProgram.Logger.html#AutomationTestingProgram_Logger_Warn_
-  commentId: Overload:AutomationTestingProgram.Logger.Warn
-  isSpec: "True"
-  fullName: AutomationTestingProgram.Logger.Warn
-  nameWithType: Logger.Warn
 - uid: AxeAccessibilityDriver
   name: AxeAccessibilityDriver
   href: api/AxeAccessibilityDriver.html
@@ -103,12 +13,18 @@ references:
   commentId: T:AxeAccessibilityDriver.AxeDriver
   fullName: AxeAccessibilityDriver.AxeDriver
   nameWithType: AxeDriver
-- uid: AxeAccessibilityDriver.AxeDriver.#ctor
-  name: AxeDriver()
-  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver__ctor
-  commentId: M:AxeAccessibilityDriver.AxeDriver.#ctor
-  fullName: AxeAccessibilityDriver.AxeDriver.AxeDriver()
-  nameWithType: AxeDriver.AxeDriver()
+- uid: AxeAccessibilityDriver.AxeDriver.#ctor(OpenQA.Selenium.IWebDriver)
+  name: AxeDriver(IWebDriver)
+  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver__ctor_OpenQA_Selenium_IWebDriver_
+  commentId: M:AxeAccessibilityDriver.AxeDriver.#ctor(OpenQA.Selenium.IWebDriver)
+  fullName: AxeAccessibilityDriver.AxeDriver.AxeDriver(OpenQA.Selenium.IWebDriver)
+  nameWithType: AxeDriver.AxeDriver(IWebDriver)
+- uid: AxeAccessibilityDriver.AxeDriver.#ctor(OpenQA.Selenium.IWebDriver,Microsoft.Extensions.Logging.ILogger)
+  name: AxeDriver(IWebDriver, ILogger)
+  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver__ctor_OpenQA_Selenium_IWebDriver_Microsoft_Extensions_Logging_ILogger_
+  commentId: M:AxeAccessibilityDriver.AxeDriver.#ctor(OpenQA.Selenium.IWebDriver,Microsoft.Extensions.Logging.ILogger)
+  fullName: AxeAccessibilityDriver.AxeDriver.AxeDriver(OpenQA.Selenium.IWebDriver, Microsoft.Extensions.Logging.ILogger)
+  nameWithType: AxeDriver.AxeDriver(IWebDriver, ILogger)
 - uid: AxeAccessibilityDriver.AxeDriver.#ctor*
   name: AxeDriver
   href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver__ctor_
@@ -116,12 +32,12 @@ references:
   isSpec: "True"
   fullName: AxeAccessibilityDriver.AxeDriver.AxeDriver
   nameWithType: AxeDriver.AxeDriver
-- uid: AxeAccessibilityDriver.AxeDriver.CaptureResult(OpenQA.Selenium.IWebDriver,System.String)
-  name: CaptureResult(IWebDriver, String)
-  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver_CaptureResult_OpenQA_Selenium_IWebDriver_System_String_
-  commentId: M:AxeAccessibilityDriver.AxeDriver.CaptureResult(OpenQA.Selenium.IWebDriver,System.String)
-  fullName: AxeAccessibilityDriver.AxeDriver.CaptureResult(OpenQA.Selenium.IWebDriver, System.String)
-  nameWithType: AxeDriver.CaptureResult(IWebDriver, String)
+- uid: AxeAccessibilityDriver.AxeDriver.CaptureResult(System.String)
+  name: CaptureResult(String)
+  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver_CaptureResult_System_String_
+  commentId: M:AxeAccessibilityDriver.AxeDriver.CaptureResult(System.String)
+  fullName: AxeAccessibilityDriver.AxeDriver.CaptureResult(System.String)
+  nameWithType: AxeDriver.CaptureResult(String)
 - uid: AxeAccessibilityDriver.AxeDriver.CaptureResult*
   name: CaptureResult
   href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver_CaptureResult_
@@ -178,12 +94,12 @@ references:
   commentId: T:AxeAccessibilityDriver.IAccessibilityChecker
   fullName: AxeAccessibilityDriver.IAccessibilityChecker
   nameWithType: IAccessibilityChecker
-- uid: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(OpenQA.Selenium.IWebDriver,System.String)
-  name: CaptureResult(IWebDriver, String)
-  href: api/AxeAccessibilityDriver.IAccessibilityChecker.html#AxeAccessibilityDriver_IAccessibilityChecker_CaptureResult_OpenQA_Selenium_IWebDriver_System_String_
-  commentId: M:AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(OpenQA.Selenium.IWebDriver,System.String)
-  fullName: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(OpenQA.Selenium.IWebDriver, System.String)
-  nameWithType: IAccessibilityChecker.CaptureResult(IWebDriver, String)
+- uid: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(System.String)
+  name: CaptureResult(String)
+  href: api/AxeAccessibilityDriver.IAccessibilityChecker.html#AxeAccessibilityDriver_IAccessibilityChecker_CaptureResult_System_String_
+  commentId: M:AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(System.String)
+  fullName: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult(System.String)
+  nameWithType: IAccessibilityChecker.CaptureResult(String)
 - uid: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult*
   name: CaptureResult
   href: api/AxeAccessibilityDriver.IAccessibilityChecker.html#AxeAccessibilityDriver_IAccessibilityChecker_CaptureResult_

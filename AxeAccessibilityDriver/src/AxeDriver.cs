@@ -86,6 +86,7 @@ namespace AxeAccessibilityDriver
         /// <param name="providedPageTitle"> Title of the page. </param>
         public void CaptureResult(string providedPageTitle)
         {
+            this.logger?.LogInformation($"Capturing Result for {providedPageTitle}");
             this.driver.Manage().Window.FullScreen();
             AxeResult results = this.driver.Analyze();
 
@@ -118,6 +119,7 @@ namespace AxeAccessibilityDriver
                     $"\"{results.Violations.Count()}\"," +
                     $"\"{results.Incomplete.Count()}\"," +
                     $"\"{results.Inapplicable.Count()}\""));
+            this.logger?.LogInformation($"Capturing Success.");
         }
 
         /// <summary>
@@ -135,6 +137,7 @@ namespace AxeAccessibilityDriver
             {
                 "Page URl,Provided Page Title,Browser Page Title,Result Type,Description,Rule Tag,Impact,Help,Help URL,Occurance on Page",
             };
+            this.logger?.LogInformation($"Generating Json File.");
 
             // we are looping through each resultType
             foreach (KeyValuePair<string, Dictionary<string, Dictionary<string, HashSet<RuleNodeInformation>>>> resultType in this.results)
@@ -220,6 +223,8 @@ namespace AxeAccessibilityDriver
                 }
             }
 
+            this.logger?.LogInformation($"Generating RulePageSummary.csv");
+
             // populate RulePageSummary.csv
             using (StreamWriter sw = new StreamWriter(folderLocation + RULEPAGESUMMARY))
             {
@@ -228,6 +233,8 @@ namespace AxeAccessibilityDriver
                     sw.WriteLine(rulePage);
                 }
             }
+
+            this.logger?.LogInformation($"Generating TalliedResult.csv");
 
             // write out TalliedResult.csv
             using (StreamWriter sw = new StreamWriter(folderLocation + TALLIEDRESULT))
@@ -238,6 +245,7 @@ namespace AxeAccessibilityDriver
                 }
             }
 
+            this.logger?.LogInformation($"Generating WATRReport.xlsx");
             excelReport.WriteToExcel();
         }
 

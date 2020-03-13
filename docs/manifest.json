@@ -5,35 +5,11 @@
   "files": [
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/AutomationTestingProgram.Logger.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AutomationTestingProgram.Logger.html",
-          "hash": "PU5I+jgZQzGbKmStKZf7Mg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AutomationTestingProgram.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AutomationTestingProgram.html",
-          "hash": "WYW/8ylWujMvaUrXTI8quw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/AxeAccessibilityDriver.AxeDriver.yml",
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.AxeDriver.html",
-          "hash": "7MD2G9bFD+CultNreMhVlA=="
+          "hash": "nZBwUW7Coe66+gG33SC1nQ=="
         }
       },
       "is_incremental": false,
@@ -57,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.IAccessibilityChecker.html",
-          "hash": "2qUD0jqjj9CpCAXegyUfKA=="
+          "hash": "S4BLUHcpGRlEVOEgHVvWfA=="
         }
       },
       "is_incremental": false,
@@ -153,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "sehZZHxLYUApC/lGI7xI5A=="
+          "hash": "gFEk2ZxyXQuUOgJOzKjp9Q=="
         }
       },
       "is_incremental": false,
@@ -165,10 +141,46 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "ZiV8tJidOeOXR1e0nxt3iA=="
+          "hash": "IlYiS+SRUP4E9p6a6meMdg=="
         }
       },
       "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/HowItReports.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/HowItReports.html",
+          "hash": "QXHDH6iDkfG6/v2EDmUPKg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/HowItWorks.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/HowItWorks.html",
+          "hash": "4LgBsqosjlP7MqmMXR/xsg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/HowToRun.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/HowToRun.html",
+          "hash": "B0uwd+FDcnRIoVioLfEUsg=="
+        }
+      },
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -177,10 +189,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "ayNUEdRqoJX22B8bdidNqA=="
+          "hash": "wCu5m+Rn7tFA+H4TdXMHfQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -189,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "gB8AESyvNru97tzIZofEEg=="
+          "hash": "N4GElPK01REN6suamacX6w=="
         }
       },
       "is_incremental": false,
@@ -201,10 +213,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "kXKWWn8qmQJhkveOYFZqNw=="
+          "hash": "k9S8EeUK0ClMm2wKp8F0cQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -223,25 +235,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "ForceRebuild"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 0
+          "total_file_count": 6,
+          "skipped_file_count": 6
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 12,
-          "skipped_file_count": 0
+          "total_file_count": 10,
+          "skipped_file_count": 8
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -254,8 +264,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
