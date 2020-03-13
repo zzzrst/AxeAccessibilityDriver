@@ -1,0 +1,272 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/DUONGCH/Projects/AxeAccessibilityDriver/AxeAccessibilityDriver",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AutomationTestingProgram.Logger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AutomationTestingProgram.Logger.html",
+          "hash": "PU5I+jgZQzGbKmStKZf7Mg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AutomationTestingProgram.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AutomationTestingProgram.html",
+          "hash": "WYW/8ylWujMvaUrXTI8quw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.AxeDriver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.AxeDriver.html",
+          "hash": "7MD2G9bFD+CultNreMhVlA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.AxeResultType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.AxeResultType.html",
+          "hash": "xncq6hzZZS9TI89xTnihMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.IAccessibilityChecker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.IAccessibilityChecker.html",
+          "hash": "2qUD0jqjj9CpCAXegyUfKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.IssueLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.IssueLog.html",
+          "hash": "jWWtvT236zU3WncUZvOR+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.PageInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.PageInformation.html",
+          "hash": "tOLfkNt75GQIBKL7ufYGVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.ResourceHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.ResourceHelper.html",
+          "hash": "B5ibnl0SyYgnsXSHHZzKPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.RuleInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.RuleInformation.html",
+          "hash": "MGD/69ZZIs0IySoRXQNxxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.RuleNodeInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.RuleNodeInformation.html",
+          "hash": "BDgjThqV5j8+zJLlJThBQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.TestReportExcel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.TestReportExcel.html",
+          "hash": "UC+t3yEdKQfeRD1sgSohSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/AxeAccessibilityDriver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/AxeAccessibilityDriver.html",
+          "hash": "kdDjES2phnB6scAPAVRUOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "sehZZHxLYUApC/lGI7xI5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "ZiV8tJidOeOXR1e0nxt3iA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "ayNUEdRqoJX22B8bdidNqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "gB8AESyvNru97tzIZofEEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "kXKWWn8qmQJhkveOYFZqNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "+rHUkRZHZRi5gd1aTU6lJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 12,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
