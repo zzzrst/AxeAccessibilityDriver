@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/DUONGCH/Projects/AxeAccessibilityDriver/AxeAccessibilityDriver",
+  "source_base_path": "C:/Users/DuongCh/Projects/AxeAccessibilityDriver/AxeAccessibilityDriver",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.AxeDriver.html",
-          "hash": "JzFfokCXwgyBKKvk1CM/xQ=="
+          "hash": "nZBwUW7Coe66+gG33SC1nQ=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.AxeResultType.html",
-          "hash": "c4uO9wIgtRz8jlcPg0P4cw=="
+          "hash": "xncq6hzZZS9TI89xTnihMg=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.IAccessibilityChecker.html",
-          "hash": "iAqbLyzNuxhaBZw/DmewMQ=="
+          "hash": "S4BLUHcpGRlEVOEgHVvWfA=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.IssueLog.html",
-          "hash": "rdTxUiRO3vxu1Ku2wzxRxg=="
+          "hash": "jWWtvT236zU3WncUZvOR+w=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.PageInformation.html",
-          "hash": "bq7seMNhEYpS+MPRCmaAqg=="
+          "hash": "tOLfkNt75GQIBKL7ufYGVw=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.ResourceHelper.html",
-          "hash": "T1buKIUt8jEfVnje7XU/cA=="
+          "hash": "B5ibnl0SyYgnsXSHHZzKPQ=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.RuleInformation.html",
-          "hash": "OIrR9mDRpPcacrqy/8EWaQ=="
+          "hash": "MGD/69ZZIs0IySoRXQNxxw=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.RuleNodeInformation.html",
-          "hash": "NPwSzp8gb+vi2bjTeALH8A=="
+          "hash": "BDgjThqV5j8+zJLlJThBQA=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.TestReportExcel.html",
-          "hash": "y1DK2Y8KEVzuXA0Y391Wmg=="
+          "hash": "UC+t3yEdKQfeRD1sgSohSg=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "gA8VAiIol7JER6jI6gWqtw=="
+          "hash": "gFEk2ZxyXQuUOgJOzKjp9Q=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/HowItReports.html",
-          "hash": "KE+Se13/mARaE1d6yAzorg=="
+          "hash": "Qg3Flbq8qQcnUlN7WxtWZg=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/HowItWorks.html",
-          "hash": "k95VyMUcU1KTMqn8HTNhUw=="
+          "hash": "4LgBsqosjlP7MqmMXR/xsg=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/HowToRun.html",
-          "hash": "i2mHU6TYeF85tEqSCJef4w=="
+          "hash": "B0uwd+FDcnRIoVioLfEUsg=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "Ie6jhg8xa5fB0c30ZjWEOw=="
+          "hash": "/mUyEhtPdET0m0MS3NZT9w=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "ZBRqxLtG6gdDPA+dqwe+WQ=="
+          "hash": "k9S8EeUK0ClMm2wKp8F0cQ=="
         }
       },
       "is_incremental": false,
