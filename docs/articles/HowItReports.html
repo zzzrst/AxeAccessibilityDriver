@@ -106,19 +106,98 @@ The Json files are formatted as follow:</li>
 </code></pre>
 <h3 id="csv-file">Csv File</h3>
 <p>2 Csv Files will be created in the format:</p>
-<p>RulePageSummary.csv<br>
-|Page URL|Provided Page Title|Browser Page Title|Result Type|Description|Rule Tag|Impact|Help|Help URL| Occurance on page
-|---|---|---|---|---|---|---|---|---|---|
-|url|title|title|result|description|tags|impact|help|help URL|#|</p>
-<p>TalliedResult.csv
-|Page URL|Provided Page Title|Browser Page Title|Passes|Violations|Incompete|Inapplicable|
-|---|---|---|---|---|---|---|
-|Url|Title|Title|#|#|#|#|</p>
+<p>RulePageSummary.csv</p>
+<table>
+<thead>
+<tr>
+<th>Page URL</th>
+<th>Provided Page Title</th>
+<th>Browser Page Title</th>
+<th>Result Type</th>
+<th>Description</th>
+<th>Rule Tag</th>
+<th>Impact</th>
+<th>Help</th>
+<th>Help URL</th>
+<th>Occurance on page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>title</td>
+<td>title</td>
+<td>result</td>
+<td>description</td>
+<td>tags</td>
+<td>impact</td>
+<td>help</td>
+<td>help URL</td>
+<td>#</td>
+</tr>
+</tbody>
+</table>
+<p>TalliedResult.csv</p>
+<table>
+<thead>
+<tr>
+<th>Page URL</th>
+<th>Provided Page Title</th>
+<th>Browser Page Title</th>
+<th>Passes</th>
+<th>Violations</th>
+<th>Incompete</th>
+<th>Inapplicable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Url</td>
+<td>Title</td>
+<td>Title</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+</tr>
+</tbody>
+</table>
 <h3 id="excel-file">Excel File</h3>
 <p>1 Excel File Named WATRReport will be generated. It has 4 Pages.</p>
 <p>The first page is instructions for the WATR Report. It will not be changed.</p>
 <p>The Executive Summary Page will have the Progress to 100% Comlpliance filled out as well as the Evaluation Date. Project Name, Evaluator, Testing Approach, Methods and Tools, Remediation Plan, and Related Documents Listing must be filled out by hand.</p>
 <p>The WCAG 2.0 Compliance Checklist will Have the Date and most of the criterias filled in. Under the column &quot;Metts Criteria&quot;, It may be filled as &quot;Pass&quot;, &quot;Fail&quot;, &quot;Criteria not applicable&quot;, or &quot;Requires Manual Testing&quot;. Thoses results in the same row as &quot;Requires Manual Testing&quot; Will need a QA to manualy check the page for those criteria. Don't Forget to fill the Project Name and URL at the top.</p>
+<p>The Mapping from Axe to WATR Report is as follows</p>
+<table>
+<thead>
+<tr>
+<th>AXE</th>
+<th>WATR REPORT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pass</td>
+<td>Pass</td>
+</tr>
+<tr>
+<td>Violation</td>
+<td>Fail</td>
+</tr>
+<tr>
+<td>Incomplete</td>
+<td>Incomplete</td>
+</tr>
+<tr>
+<td>Inapplicable</td>
+<td>Criteria Not applicable</td>
+</tr>
+<tr>
+<td><em>Default</em></td>
+<td>Requires Manual Testing</td>
+</tr>
+</tbody>
+</table>
 <p>The Issue Tracking Log is formatted and filled out as follows:</p>
 <table>
 <thead>
@@ -143,6 +222,33 @@ The Json files are formatted as follow:</li>
 <td>impact</td>
 <td>Current</td>
 <td>To be Determined</td>
+</tr>
+</tbody>
+</table>
+<p>The mapping from Axe to the Impact is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>AXE</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Critical</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Serious</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Moderate</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Best Practices</td>
+<td></td>
 </tr>
 </tbody>
 </table>
