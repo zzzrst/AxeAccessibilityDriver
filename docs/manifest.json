@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.AxeDriver.html",
-          "hash": "dLv6ec1adU0NjYMhQfMp/Q=="
+          "hash": "USihXPboT+wEA2RWhpZmiw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "u7QHn5QRBPiGYo/GIl7n0w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -36,7 +36,7 @@
           "hash": "dzH/TkYdLJxRZd6VT7iQyg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "Kl92+d71KwsW3KmHSH0yhw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -60,7 +60,7 @@
           "hash": "SgPyBY1Q7YETfHadI/FHVw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -72,7 +72,7 @@
           "hash": "jqFgZa+SRjv0pBb6HFmowA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -84,7 +84,7 @@
           "hash": "lcc6yZ9myekHDdoQOUYyiQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -96,7 +96,7 @@
           "hash": "dtCAdwK0VFM7yPX1Drhdag=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -105,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.TestReportExcel.html",
-          "hash": "/G4u/SHN4ZCe4X2uRWftSg=="
+          "hash": "F1K5FjxNxMvJ+eo98rT5fQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -120,7 +120,7 @@
           "hash": "4QdVjgxm+4eRJ9kb31mbCg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -132,7 +132,7 @@
           "hash": "JAQ7oYIDNWa+dKvB83iPfw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -156,7 +156,7 @@
           "hash": "01BU6qcbT7yoBw/wO7T2Vg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -168,7 +168,7 @@
           "hash": "fcGdn5mQFFuMyT5RO8Bgkg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -180,7 +180,7 @@
           "hash": "OZCri/4f7PsN5B8EFZ5N2g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -192,7 +192,7 @@
           "hash": "zUCenFqMc/urcwDEQtwJdw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -216,7 +216,7 @@
           "hash": "e6A4us1Kgdc06fUUbBLpWw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -235,25 +235,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because docfx version changed from 2.50.0.0 to 2.51.0.0.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "DocfxVersionChanged"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 6,
-          "skipped_file_count": 0
+          "skipped_file_count": 6
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 10,
-          "skipped_file_count": 0
+          "skipped_file_count": 10
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

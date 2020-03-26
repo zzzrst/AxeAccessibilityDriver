@@ -211,6 +211,10 @@
     <value>9</value>
     <comment>the row where the date is located on the summary sheet</comment>
   </data>
+  <data name="SUMMARY_LINKS" xml:space="preserve">
+    <value>18</value>
+    <comment>Where to put the list of website tested</comment>
+  </data>
   <data name="SUMMARY_PROGRESS_CELL" xml:space="preserve">
     <value>0</value>
     <comment>Cell of where to put the progress in the summary sheet</comment>
@@ -218,6 +222,10 @@
   <data name="SUMMARY_PROGRESS_ROW" xml:space="preserve">
     <value>28</value>
     <comment>Row where to put the progress in the summary sheet</comment>
+  </data>
+  <data name="SUMMARY_SUMMARY" xml:space="preserve">
+    <value>20</value>
+    <comment>The Summary of Findings row</comment>
   </data>
   <data name="TOTAL_CRITERIA" xml:space="preserve">
     <value>38</value>

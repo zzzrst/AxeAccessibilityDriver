@@ -101,6 +101,9 @@ namespace AxeAccessibilityDriver
                     BrowserPageTitle = this.driver.Title,
                     ProvidedPageTitle = providedPageTitle,
                 };
+
+                //adds it to the excel sheet too
+
             }
 
             // map each axe result
@@ -131,6 +134,7 @@ namespace AxeAccessibilityDriver
             TestReportExcel excelReport = new TestReportExcel()
             {
                 FileLocation = folderLocation + "\\" + AODAEXCELREPORT,
+                UrlList = this.pageInfo.Keys.ToList(),
             };
 
             List<string> rulePageSummary = new List<string>()

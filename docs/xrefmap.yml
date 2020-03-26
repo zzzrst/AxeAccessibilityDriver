@@ -429,6 +429,19 @@ references:
   isSpec: "True"
   fullName: AxeAccessibilityDriver.TestReportExcel.ProjectUrl
   nameWithType: TestReportExcel.ProjectUrl
+- uid: AxeAccessibilityDriver.TestReportExcel.UrlList
+  name: UrlList
+  href: api/AxeAccessibilityDriver.TestReportExcel.html#AxeAccessibilityDriver_TestReportExcel_UrlList
+  commentId: P:AxeAccessibilityDriver.TestReportExcel.UrlList
+  fullName: AxeAccessibilityDriver.TestReportExcel.UrlList
+  nameWithType: TestReportExcel.UrlList
+- uid: AxeAccessibilityDriver.TestReportExcel.UrlList*
+  name: UrlList
+  href: api/AxeAccessibilityDriver.TestReportExcel.html#AxeAccessibilityDriver_TestReportExcel_UrlList_
+  commentId: Overload:AxeAccessibilityDriver.TestReportExcel.UrlList
+  isSpec: "True"
+  fullName: AxeAccessibilityDriver.TestReportExcel.UrlList
+  nameWithType: TestReportExcel.UrlList
 - uid: AxeAccessibilityDriver.TestReportExcel.WriteToExcel
   name: WriteToExcel()
   href: api/AxeAccessibilityDriver.TestReportExcel.html#AxeAccessibilityDriver_TestReportExcel_WriteToExcel
