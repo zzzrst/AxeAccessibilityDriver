@@ -44,6 +44,11 @@ namespace AxeAccessibilityDriver
         public List<IssueLog> IssueList { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of all urls tested.
+        /// </summary>
+        public List<string> UrlList { get; set; }
+
+        /// <summary>
         /// Gets or sets name of the project.
         /// </summary>
         public string ProjectName { get; set; }
@@ -104,6 +109,23 @@ namespace AxeAccessibilityDriver
             int progress = (int)Math.Round((totalCriterias - this.criteriaFailed) / totalCriterias * 100);
             sheet.GetRow(progressRow).GetCell(progressCell).SetCellValue(progress.ToString() + "%");
 
+            // update the summary
+            int summaryRow = int.Parse(ResourceHelper.GetString("SUMMARY_SUMMARY"));
+            int summaryCel = 0;
+            string summary = $"There are total of {this.criteriaFailed} out of the box issues remaining, however all have workarounds in place in form of conforming alternate version that are freely available. Several fixed defects require retesting and will soon be tested.";
+            sheet.GetRow(summaryRow).GetCell(summaryCel).SetCellValue(summary);
+
+            // updates the link tested 
+            int linkRow = int.Parse(ResourceHelper.GetString("SUMMARY_LINKS"));
+            int linkCel = 0;
+            string links = string.Empty;
+            foreach (string url in this.UrlList)
+            {
+                links += url + "\r\n";
+            }
+
+            sheet.GetRow(linkRow).GetCell(linkCel).SetCellValue(links);
+
             // upadate the date
             // set the date
             int dateRow = int.Parse(ResourceHelper.GetString("SUMMARY_DATE_ROW"));
@@ -150,6 +172,7 @@ namespace AxeAccessibilityDriver
             }
 
             // update the total
+            workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateAll();
             int totalRow = int.Parse(ResourceHelper.GetString("CHECKLIST_TOTAL_ROW"));
             int totalCell = int.Parse(ResourceHelper.GetString("CHECKLIST_TOTAL_CELL"));
             workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateFormulaCell(sheet.GetRow(totalRow).GetCell(totalCell));

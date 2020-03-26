@@ -277,6 +277,15 @@ namespace AxeAccessibilityDriver.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 18.
+        /// </summary>
+        internal static string SUMMARY_LINKS {
+            get {
+                return ResourceManager.GetString("SUMMARY_LINKS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
         internal static string SUMMARY_PROGRESS_CELL {
@@ -291,6 +300,15 @@ namespace AxeAccessibilityDriver.Properties {
         internal static string SUMMARY_PROGRESS_ROW {
             get {
                 return ResourceManager.GetString("SUMMARY_PROGRESS_ROW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 20.
+        /// </summary>
+        internal static string SUMMARY_SUMMARY {
+            get {
+                return ResourceManager.GetString("SUMMARY_SUMMARY", resourceCulture);
             }
         }
         

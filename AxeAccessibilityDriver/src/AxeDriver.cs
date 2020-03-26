@@ -101,6 +101,9 @@ namespace AxeAccessibilityDriver
                     BrowserPageTitle = this.driver.Title,
                     ProvidedPageTitle = providedPageTitle,
                 };
+
+                //adds it to the excel sheet too
+
             }
 
             // map each axe result
@@ -131,6 +134,7 @@ namespace AxeAccessibilityDriver
             TestReportExcel excelReport = new TestReportExcel()
             {
                 FileLocation = folderLocation + "\\" + AODAEXCELREPORT,
+                UrlList = this.pageInfo.Keys.ToList(),
             };
 
             List<string> rulePageSummary = new List<string>()
@@ -185,13 +189,17 @@ namespace AxeAccessibilityDriver
                         // add it to the excel issue list only if it failed.
                         if (criteriaString.Equals(ResourceHelper.GetString("CriteriaFail")))
                         {
-                            excelReport.IssueList.Add(new IssueLog()
+                            List<string> criteriaIds = this.GetCriteriaId(this.ruleInfo[ruleID.Key].RuleTag);
+                            foreach (string id in criteriaIds)
                             {
-                                Criterion = this.GetCriteriaId(this.ruleInfo[ruleID.Key].RuleTag),
-                                Impact = ResourceHelper.GetString($"IssueKey{this.ruleInfo[ruleID.Key].Impact}"),
-                                Description = this.ruleInfo[ruleID.Key].Help,
-                                Url = currentURL,
-                            });
+                                excelReport.IssueList.Add(new IssueLog()
+                                {
+                                    Criterion = id,
+                                    Impact = ResourceHelper.GetString($"IssueKey{this.ruleInfo[ruleID.Key].Impact}"),
+                                    Description = this.ruleInfo[ruleID.Key].Help,
+                                    Url = currentURL,
+                                });
+                            }
                         }
 
                         // record occurance on page
@@ -259,7 +267,7 @@ namespace AxeAccessibilityDriver
         private void WriteToExcelData(TestReportExcel excelReport, List<string> ruleTag, string resultString, string comment)
         {
             // add it into the excel sheet.
-            string rowName = null;
+            List<string> ids;
             int criteriaColumn = int.Parse(ResourceHelper.GetString("CriteriaColumn"));
             int commentColumn = int.Parse(ResourceHelper.GetString("CommentColumn"));
 
@@ -272,10 +280,10 @@ namespace AxeAccessibilityDriver
             // Add Comments.
             row.Add(comment);
 
-            rowName = this.GetCriteriaId(ruleTag);
+            ids = this.GetCriteriaId(ruleTag);
 
             // add the key.
-            if (rowName != null)
+            foreach (string rowName in ids)
             {
                 // If there is an existing data.
                 if (excelReport.ExcelData.ContainsKey(rowName))
@@ -306,20 +314,21 @@ namespace AxeAccessibilityDriver
         /// </summary>
         /// <param name="ruleTag">List of tags.</param>
         /// <returns>the id.</returns>
-        private string GetCriteriaId(List<string> ruleTag)
+        private List<string> GetCriteriaId(List<string> ruleTag)
         {
-            string id = null;
+            List<string> tags = new List<string>();
+            List<string> ids = new List<string>();
+            tags = ruleTag.FindAll(s => s.Contains("wcag") && !s.Contains("1a") && !s.Contains("2a"));
 
-            id = ruleTag.Find(s => s.Contains("wcag") && !s.Contains("1a") && !s.Contains("2a"));
-
-            if (id != null)
+            foreach (string tag in tags)
             {
-                id = id.Substring(4);
+                string id = tag.Substring(4);
                 id = id.Aggregate(string.Empty, (c, i) => c + i + '.');
                 id = id.Substring(0, id.Length - 1);
+                ids.Add(id);
             }
 
-            return id;
+            return ids;
         }
 
         /// <summary>
