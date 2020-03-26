@@ -150,6 +150,7 @@ namespace AxeAccessibilityDriver
             }
 
             // update the total
+            workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateAll();
             int totalRow = int.Parse(ResourceHelper.GetString("CHECKLIST_TOTAL_ROW"));
             int totalCell = int.Parse(ResourceHelper.GetString("CHECKLIST_TOTAL_CELL"));
             workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateFormulaCell(sheet.GetRow(totalRow).GetCell(totalCell));

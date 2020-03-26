@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.AxeDriver.html",
-          "hash": "nZBwUW7Coe66+gG33SC1nQ=="
+          "hash": "dLv6ec1adU0NjYMhQfMp/Q=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.AxeResultType.html",
-          "hash": "xncq6hzZZS9TI89xTnihMg=="
+          "hash": "u7QHn5QRBPiGYo/GIl7n0w=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.IAccessibilityChecker.html",
-          "hash": "S4BLUHcpGRlEVOEgHVvWfA=="
+          "hash": "dzH/TkYdLJxRZd6VT7iQyg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.IssueLog.html",
-          "hash": "jWWtvT236zU3WncUZvOR+w=="
+          "hash": "Kl92+d71KwsW3KmHSH0yhw=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.PageInformation.html",
-          "hash": "tOLfkNt75GQIBKL7ufYGVw=="
+          "hash": "SgPyBY1Q7YETfHadI/FHVw=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.ResourceHelper.html",
-          "hash": "B5ibnl0SyYgnsXSHHZzKPQ=="
+          "hash": "jqFgZa+SRjv0pBb6HFmowA=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.RuleInformation.html",
-          "hash": "MGD/69ZZIs0IySoRXQNxxw=="
+          "hash": "lcc6yZ9myekHDdoQOUYyiQ=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.RuleNodeInformation.html",
-          "hash": "BDgjThqV5j8+zJLlJThBQA=="
+          "hash": "dtCAdwK0VFM7yPX1Drhdag=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.TestReportExcel.html",
-          "hash": "UC+t3yEdKQfeRD1sgSohSg=="
+          "hash": "/G4u/SHN4ZCe4X2uRWftSg=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.html",
-          "hash": "kdDjES2phnB6scAPAVRUOw=="
+          "hash": "4QdVjgxm+4eRJ9kb31mbCg=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "gFEk2ZxyXQuUOgJOzKjp9Q=="
+          "hash": "JAQ7oYIDNWa+dKvB83iPfw=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/HowItReports.html",
-          "hash": "Qg3Flbq8qQcnUlN7WxtWZg=="
+          "hash": "01BU6qcbT7yoBw/wO7T2Vg=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/HowItWorks.html",
-          "hash": "4LgBsqosjlP7MqmMXR/xsg=="
+          "hash": "fcGdn5mQFFuMyT5RO8Bgkg=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/HowToRun.html",
-          "hash": "B0uwd+FDcnRIoVioLfEUsg=="
+          "hash": "OZCri/4f7PsN5B8EFZ5N2g=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "/mUyEhtPdET0m0MS3NZT9w=="
+          "hash": "zUCenFqMc/urcwDEQtwJdw=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "k9S8EeUK0ClMm2wKp8F0cQ=="
+          "hash": "e6A4us1Kgdc06fUUbBLpWw=="
         }
       },
       "is_incremental": false,
@@ -236,11 +236,11 @@
     {
       "status": {
         "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
+        "details": "Cannot build incrementally because docfx version changed from 2.50.0.0 to 2.51.0.0.",
         "incrementalPhase": "build",
         "total_file_count": 0,
         "skipped_file_count": 0,
-        "full_build_reason_code": "ForceRebuild"
+        "full_build_reason_code": "DocfxVersionChanged"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
@@ -266,8 +266,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
