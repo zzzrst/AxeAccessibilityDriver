@@ -102,8 +102,7 @@ namespace AxeAccessibilityDriver
                     ProvidedPageTitle = providedPageTitle,
                 };
 
-                //adds it to the excel sheet too
-
+                // adds it to the excel sheet too
             }
 
             // map each axe result
