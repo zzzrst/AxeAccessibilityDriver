@@ -70,6 +70,7 @@ Output results into json, csv and WATR report</Description>
   <ItemGroup>
     <Content Include="WATR_Template.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
   </ItemGroup>
 
