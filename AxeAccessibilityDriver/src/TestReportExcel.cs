@@ -115,7 +115,7 @@ namespace AxeAccessibilityDriver
             string summary = $"There are total of {this.criteriaFailed} out of the box issues remaining, however all have workarounds in place in form of conforming alternate version that are freely available. Several fixed defects require retesting and will soon be tested.";
             sheet.GetRow(summaryRow).GetCell(summaryCel).SetCellValue(summary);
 
-            // updates the link tested 
+            // updates the link tested
             int linkRow = int.Parse(ResourceHelper.GetString("SUMMARY_LINKS"));
             int linkCel = 0;
             string links = string.Empty;
@@ -171,8 +171,14 @@ namespace AxeAccessibilityDriver
                 }
             }
 
+            // update the hidden column that represents the pass/fail
+            int hiddenColumn = 7;
+            for (int row = 12; row < 56; row++)
+            {
+                workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateFormulaCell(sheet.GetRow(row).GetCell(hiddenColumn));
+            }
+
             // update the total
-            workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateAll();
             int totalRow = int.Parse(ResourceHelper.GetString("CHECKLIST_TOTAL_ROW"));
             int totalCell = int.Parse(ResourceHelper.GetString("CHECKLIST_TOTAL_CELL"));
             workbook.GetCreationHelper().CreateFormulaEvaluator().EvaluateFormulaCell(sheet.GetRow(totalRow).GetCell(totalCell));
