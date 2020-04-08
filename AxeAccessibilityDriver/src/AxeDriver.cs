@@ -49,11 +49,6 @@ namespace AxeAccessibilityDriver
         private ILogger logger;
 
         /// <summary>
-        /// WebDriver to use.
-        /// </summary>
-        private IWebDriver driver;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="AxeDriver"/> class.
         /// </summary>
         /// <param name="driver">driver to use.</param>
@@ -70,7 +65,7 @@ namespace AxeAccessibilityDriver
         public AxeDriver(IWebDriver driver, ILogger logger)
         {
             this.logger = logger;
-            this.driver = driver;
+            this.Driver = driver;
             this.results = new Dictionary<string, Dictionary<string, Dictionary<string, HashSet<RuleNodeInformation>>>>();
             this.pageInfo = new Dictionary<string, PageInformation>();
             this.ruleInfo = new Dictionary<string, RuleInformation>();
@@ -80,6 +75,9 @@ namespace AxeAccessibilityDriver
             };
         }
 
+        /// <inheritdoc/>
+        public IWebDriver Driver { get; set; }
+
         /// <summary>
         /// This captures the AODA result for this webpage.
         /// </summary>
@@ -87,8 +85,8 @@ namespace AxeAccessibilityDriver
         public void CaptureResult(string providedPageTitle)
         {
             this.logger?.LogInformation($"Capturing Result for {providedPageTitle}");
-            this.driver.Manage().Window.FullScreen();
-            AxeResult results = this.driver.Analyze();
+            this.Driver.Manage().Window.FullScreen();
+            AxeResult results = this.Driver.Analyze();
 
             // check if there is any error. If there is, write it out
             Console.WriteLine(results.Error);
@@ -98,7 +96,7 @@ namespace AxeAccessibilityDriver
             {
                 this.pageInfo[results.Url] = new PageInformation()
                 {
-                    BrowserPageTitle = this.driver.Title,
+                    BrowserPageTitle = this.Driver.Title,
                     ProvidedPageTitle = providedPageTitle,
                 };
 
@@ -116,7 +114,7 @@ namespace AxeAccessibilityDriver
                 string.Format(
                     $"\"{results.Url}\"," +
                     $"\"{providedPageTitle}\"," +
-                    $"\"{this.driver.Title}\"," +
+                    $"\"{this.Driver.Title}\"," +
                     $"\"{results.Passes.Count()}\"," +
                     $"\"{results.Violations.Count()}\"," +
                     $"\"{results.Incomplete.Count()}\"," +

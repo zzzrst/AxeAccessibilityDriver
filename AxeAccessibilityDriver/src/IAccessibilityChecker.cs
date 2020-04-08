@@ -15,6 +15,11 @@ namespace AxeAccessibilityDriver
     public interface IAccessibilityChecker
     {
         /// <summary>
+        /// Gets or sets webDriver to use.
+        /// </summary>
+        IWebDriver Driver { get; set; }
+
+        /// <summary>
         /// This captures the AODA result for this webpage.
         /// </summary>
         /// <param name="providedPageTitle"> Title of the page. </param>
