@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.AxeDriver.html",
-          "hash": "u4zjDzTcvH4/CaYiWeM82w=="
+          "hash": "jluK5mAxWtvQAqAdkxd3xQ=="
         }
       },
       "is_incremental": false,
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.AxeResultType.html",
-          "hash": "u7QHn5QRBPiGYo/GIl7n0w=="
+          "hash": "ozFdSh2Sfjyw+I32DTrs3A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.IAccessibilityChecker.html",
-          "hash": "dzH/TkYdLJxRZd6VT7iQyg=="
+          "hash": "ivydgxjt5csw0wYkR71FVA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.IssueLog.html",
-          "hash": "Kl92+d71KwsW3KmHSH0yhw=="
+          "hash": "uqMGUSsAiHsJKfAVYHKLCQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.PageInformation.html",
-          "hash": "SgPyBY1Q7YETfHadI/FHVw=="
+          "hash": "MKqR9Lu8KjFkcqUPlg6n6g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.ResourceHelper.html",
-          "hash": "jqFgZa+SRjv0pBb6HFmowA=="
+          "hash": "mijAhLm2QLir6BWsDzTtEA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.RuleInformation.html",
-          "hash": "lcc6yZ9myekHDdoQOUYyiQ=="
+          "hash": "eoBPRvN97kUTyKRup0EZLw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.RuleNodeInformation.html",
-          "hash": "dtCAdwK0VFM7yPX1Drhdag=="
+          "hash": "t4aj0W4nOufBKMBB6XaPNQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/AxeAccessibilityDriver.TestReportExcel.html",
-          "hash": "F1K5FjxNxMvJ+eo98rT5fQ=="
+          "hash": "O9V92+qs6JZHXz6H5uqwew=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -129,10 +129,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "JAQ7oYIDNWa+dKvB83iPfw=="
+          "hash": "dd/qGr+hPfdC42rnjQs8wQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,10 +153,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/HowItReports.html",
-          "hash": "01BU6qcbT7yoBw/wO7T2Vg=="
+          "hash": "XWoMy57eFnxGF2SUV2nLNQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -165,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/HowItWorks.html",
-          "hash": "fcGdn5mQFFuMyT5RO8Bgkg=="
+          "hash": "HOgoehzwVYXdPn9Upf2Bkw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -177,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/HowToRun.html",
-          "hash": "OZCri/4f7PsN5B8EFZ5N2g=="
+          "hash": "PPQda4bsCG0cGtsAAd9Kbw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -189,10 +189,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "zUCenFqMc/urcwDEQtwJdw=="
+          "hash": "N+j1IR304NUBOD+pG1UUzw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -213,10 +213,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "e6A4us1Kgdc06fUUbBLpWw=="
+          "hash": "yUsA2Vbxmg2SrVBanqa4cw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -235,23 +235,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 6,
-          "skipped_file_count": 6
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 10,
-          "skipped_file_count": 9
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -264,8 +266,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

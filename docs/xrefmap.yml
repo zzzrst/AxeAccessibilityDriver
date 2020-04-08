@@ -45,6 +45,19 @@ references:
   isSpec: "True"
   fullName: AxeAccessibilityDriver.AxeDriver.CaptureResult
   nameWithType: AxeDriver.CaptureResult
+- uid: AxeAccessibilityDriver.AxeDriver.Driver
+  name: Driver
+  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver_Driver
+  commentId: P:AxeAccessibilityDriver.AxeDriver.Driver
+  fullName: AxeAccessibilityDriver.AxeDriver.Driver
+  nameWithType: AxeDriver.Driver
+- uid: AxeAccessibilityDriver.AxeDriver.Driver*
+  name: Driver
+  href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver_Driver_
+  commentId: Overload:AxeAccessibilityDriver.AxeDriver.Driver
+  isSpec: "True"
+  fullName: AxeAccessibilityDriver.AxeDriver.Driver
+  nameWithType: AxeDriver.Driver
 - uid: AxeAccessibilityDriver.AxeDriver.LogResults(System.String)
   name: LogResults(String)
   href: api/AxeAccessibilityDriver.AxeDriver.html#AxeAccessibilityDriver_AxeDriver_LogResults_System_String_
@@ -107,6 +120,19 @@ references:
   isSpec: "True"
   fullName: AxeAccessibilityDriver.IAccessibilityChecker.CaptureResult
   nameWithType: IAccessibilityChecker.CaptureResult
+- uid: AxeAccessibilityDriver.IAccessibilityChecker.Driver
+  name: Driver
+  href: api/AxeAccessibilityDriver.IAccessibilityChecker.html#AxeAccessibilityDriver_IAccessibilityChecker_Driver
+  commentId: P:AxeAccessibilityDriver.IAccessibilityChecker.Driver
+  fullName: AxeAccessibilityDriver.IAccessibilityChecker.Driver
+  nameWithType: IAccessibilityChecker.Driver
+- uid: AxeAccessibilityDriver.IAccessibilityChecker.Driver*
+  name: Driver
+  href: api/AxeAccessibilityDriver.IAccessibilityChecker.html#AxeAccessibilityDriver_IAccessibilityChecker_Driver_
+  commentId: Overload:AxeAccessibilityDriver.IAccessibilityChecker.Driver
+  isSpec: "True"
+  fullName: AxeAccessibilityDriver.IAccessibilityChecker.Driver
+  nameWithType: IAccessibilityChecker.Driver
 - uid: AxeAccessibilityDriver.IAccessibilityChecker.LogResults(System.String)
   name: LogResults(String)
   href: api/AxeAccessibilityDriver.IAccessibilityChecker.html#AxeAccessibilityDriver_IAccessibilityChecker_LogResults_System_String_
