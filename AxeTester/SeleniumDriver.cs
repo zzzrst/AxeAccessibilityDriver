@@ -532,6 +532,10 @@ namespace AxeTester
                 {
                     this.axeDriver = new AxeDriver(this.webDriver);
                 }
+                else
+                {
+                    this.axeDriver.Driver = this.webDriver;
+                }
             }
             catch (Exception e)
             {

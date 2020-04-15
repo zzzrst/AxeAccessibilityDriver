@@ -121,7 +121,11 @@ namespace AxeAccessibilityDriver
             string links = string.Empty;
             foreach (string url in this.UrlList)
             {
-                links += url + "\r\n";
+                // character limit
+                if ((links + url + "\r\n").Length < 32000)
+                {
+                    links += url + "\r\n";
+                }
             }
 
             sheet.GetRow(linkRow).GetCell(linkCel).SetCellValue(links);
