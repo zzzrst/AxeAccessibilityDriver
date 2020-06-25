@@ -18,7 +18,15 @@ Output results into json, csv and WATR report</Description>
     <PackageId />
     <Authors />
     <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\GitHubProjects\AxeAccessibilityDriver\AxeAccessibilityDriver\AxeAccessibilityDriver\AxeAccessibilityDriver.xml</DocumentationFile>
