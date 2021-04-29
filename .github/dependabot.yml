@@ -1,0 +1,28 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: docfx.console
+    versions:
+    - 2.56.6
+    - 2.56.7
+    - 2.57.0
+    - 2.57.1
+  - dependency-name: Selenium.WebDriver.ChromeDriver
+    versions:
+    - 88.0.4324.9600
+    - 89.0.4389.2300
+  - dependency-name: Selenium.Axe
+    versions:
+    - 2.0.2
+    - 2.0.3
+  - dependency-name: NPOI
+    versions:
+    - 2.5.2
+  - dependency-name: Microsoft.Extensions.Logging.Log4Net.AspNetCore
+    versions:
+    - 5.0.0
