@@ -19,6 +19,6 @@ namespace AxeAccessibilityDriver
         /// <summary>
         /// Gets or sets the list of target HTML elements / information this rule has.
         /// </summary>
-        public List<string> Target { get; set; }
+        public string Target { get; set; }
     }
 }
