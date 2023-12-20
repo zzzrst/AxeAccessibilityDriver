@@ -1,147 +1,15 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/DuongCh/Projects/AxeAccessibilityDriver/AxeAccessibilityDriver",
+  "source_base_path": "C:/Users/ZhengVi/Documents/GitHub-victor-zheng-codes/AxeAccessibilityDriver/AxeAccessibilityDriver",
   "xrefmap": "xrefmap.yml",
   "files": [
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AxeAccessibilityDriver.AxeDriver.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AxeAccessibilityDriver.AxeDriver.html",
-          "hash": "jluK5mAxWtvQAqAdkxd3xQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AxeAccessibilityDriver.AxeResultType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AxeAccessibilityDriver.AxeResultType.html",
-          "hash": "ozFdSh2Sfjyw+I32DTrs3A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AxeAccessibilityDriver.IAccessibilityChecker.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AxeAccessibilityDriver.IAccessibilityChecker.html",
-          "hash": "ivydgxjt5csw0wYkR71FVA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AxeAccessibilityDriver.IssueLog.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AxeAccessibilityDriver.IssueLog.html",
-          "hash": "uqMGUSsAiHsJKfAVYHKLCQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AxeAccessibilityDriver.PageInformation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AxeAccessibilityDriver.PageInformation.html",
-          "hash": "MKqR9Lu8KjFkcqUPlg6n6g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AxeAccessibilityDriver.ResourceHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AxeAccessibilityDriver.ResourceHelper.html",
-          "hash": "mijAhLm2QLir6BWsDzTtEA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AxeAccessibilityDriver.RuleInformation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AxeAccessibilityDriver.RuleInformation.html",
-          "hash": "eoBPRvN97kUTyKRup0EZLw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AxeAccessibilityDriver.RuleNodeInformation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AxeAccessibilityDriver.RuleNodeInformation.html",
-          "hash": "t4aj0W4nOufBKMBB6XaPNQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AxeAccessibilityDriver.TestReportExcel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AxeAccessibilityDriver.TestReportExcel.html",
-          "hash": "O9V92+qs6JZHXz6H5uqwew=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/AxeAccessibilityDriver.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/AxeAccessibilityDriver.html",
-          "hash": "4QdVjgxm+4eRJ9kb31mbCg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
     {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "dd/qGr+hPfdC42rnjQs8wQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "api/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "IlYiS+SRUP4E9p6a6meMdg=="
+          "hash": "07pX1GswdANbI3T5cCd3DA=="
         }
       },
       "is_incremental": false,
@@ -225,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "+rHUkRZHZRi5gd1aTU6lJA=="
+          "hash": "IGK1ZSYI4NbShXZSeUUd6Q=="
         }
       },
       "is_incremental": false,
@@ -247,12 +115,6 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 6,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 10,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

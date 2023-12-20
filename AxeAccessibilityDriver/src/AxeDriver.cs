@@ -4,6 +4,8 @@
 
 namespace AxeAccessibilityDriver
 {
+    //using Deque.AxeCore.Selenium;
+    //using Deque.AxeCore.Commons;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -85,11 +87,13 @@ namespace AxeAccessibilityDriver
         public void CaptureResult(string providedPageTitle)
         {
             this.logger?.LogInformation($"Capturing Result for {providedPageTitle}");
-            this.Driver.Manage().Window.FullScreen();
+
+            // Here we are maximizing and making the page full screen, which we don't necessarility want
+            // this.Driver.Manage().Window.FullScreen();
             AxeResult results = this.Driver.Analyze();
 
             // check if there is any error. If there is, write it out
-            Console.WriteLine(results.Error);
+            // Console.WriteLine("Axe violations: " + results.Violations.ToString());
 
             // map page information
             if (!this.pageInfo.ContainsKey(results.Url))
@@ -357,7 +361,11 @@ namespace AxeAccessibilityDriver
                     RuleNodeInformation temp = new RuleNodeInformation()
                     {
                         HTML = resultNode.Html,
-                        Target = resultNode.Target,
+
+                        // original
+                        // Target = resultNode.Target,
+
+                        Target = resultNode.Target.ToString(),
                     };
 
                     // add into the results dictionary
